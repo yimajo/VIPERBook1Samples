@@ -1,6 +1,8 @@
 # 『VIPER研究読本(仮)』サンプルコード
 
 [![Build Status](https://app.bitrise.io/app/0e74ed291fcdc375/status.svg?token=rcCo8NNE4pltqyxwOfvYEA&branch=master)](https://app.bitrise.io/app/0e74ed291fcdc375)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 
 技術同人誌 『VIPER研究読本(仮)』のためのサンプルコードを公開しています。
 
