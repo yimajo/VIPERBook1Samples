@@ -22,8 +22,8 @@ protocol GithubRepoSearchView: AnyObject {
 class GithubRepoSearchPresenter {
     struct Dependency {
         let wireframe: GithubReposSearchWireframe
-        let githubRepoRecommend: AnyUseCase<(), [GithubRepoEntity], ()>
-        let githubRepoSearch: AnyUseCase<String, URLRequest, ((Result<[GithubRepoEntity], Error>) -> ())>
+        let githubRepoRecommend: AnyUseCase<(), [GithubRepoEntity]>
+        let githubRepoSearch: AnyUseCase<String, [GithubRepoEntity]>
     }
 
     private let dependency: Dependency
@@ -31,7 +31,9 @@ class GithubRepoSearchPresenter {
 
     private var recommends: [GithubRepoEntity] {
         didSet {
-            view?.recommended(recommends)
+            DispatchQueue.main.async {
+                self.view?.recommended(self.recommends)
+            }
         }
     }
 
@@ -52,18 +54,24 @@ class GithubRepoSearchPresenter {
 
 extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
     func viewDidLoad() {
-        recommends = dependency.githubRepoRecommend.execute(input: (), completion: ())
+        dependency.githubRepoRecommend.execute(input: (), completion: { [weak self] result in
+            self?.recommends = try! result.get()
+        })
     }
 
     func search(_ word: String) {
-        _ = dependency.githubRepoSearch.execute(input: word) { [weak self] result in
+        dependency.githubRepoSearch.execute(input: word) { [weak self] result in
             guard let self = self else { return }
 
-            switch result {
-            case .success(let items):
-                self.searchResultEntities = items
-            case .failure(let error):
-                self.dependency.wireframe.presentAlert(error)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let items):
+                    self.searchResultEntities = items
+                case .failure(let error):
+                    if (error as NSError).code != NSURLErrorCancelled {
+                        self.dependency.wireframe.presentAlert(error)
+                    }
+                }
             }
         }
     }

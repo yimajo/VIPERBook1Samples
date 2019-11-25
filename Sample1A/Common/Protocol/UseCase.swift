@@ -10,38 +10,37 @@ import Foundation
 
 protocol UseCase {
     associatedtype Input
-    associatedtype Output
-    associatedtype Completion
+    associatedtype Success
 
-    func execute(input: Input, completion: Completion) -> Output
+    func execute(input: Input, completion: ((Result<Success, Error>) -> ())?)
 }
 
-class AnyUseCaseBox<Input, Output, Completion> {
-    func execute(input: Input, completion: Completion) -> Output {
+class AnyUseCaseBox<Input, Success> {
+    func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
         fatalError()
     }
 }
 
-final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Input, T.Output, T.Completion> {
+final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Input, T.Success> {
     private let base: T
 
     init(_ base: T) {
         self.base = base
     }
 
-    override func execute(input: T.Input, completion: T.Completion) -> T.Output {
+    override func execute(input: T.Input, completion: ((Result<T.Success, Error>) -> ())?) {
         base.execute(input: input, completion: completion)
     }
 }
 
-final class AnyUseCase<Input, Output, Completion>: UseCase {
-    private let box: AnyUseCaseBox<Input, Output, Completion>
+final class AnyUseCase<Input, Success>: UseCase {
+    private let box: AnyUseCaseBox<Input, Success>
 
-    init<T: UseCase>(_ base: T) where T.Input == Input, T.Output == Output, T.Completion == Completion {
+    init<T: UseCase>(_ base: T) where T.Input == Input, T.Success == Success {
         box = UseCaseBox<T>(base)
     }
 
-    func execute(input: Input, completion: Completion) -> Output {
+    func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
         box.execute(input: input, completion: completion)
     }
 }
