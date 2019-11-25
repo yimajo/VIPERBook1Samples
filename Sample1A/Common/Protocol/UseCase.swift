@@ -43,5 +43,4 @@ final class AnyUseCase<Input, Success>: UseCase {
     func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
         box.execute(input: input, completion: completion)
     }
-    }
 }
