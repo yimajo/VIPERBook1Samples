@@ -26,8 +26,6 @@ class GithubRepoSearchInteractor: UseCase {
 
         self.request = request
     }
-
-    }
 }
 
 class GithubRepoSearchAPIRequest {
