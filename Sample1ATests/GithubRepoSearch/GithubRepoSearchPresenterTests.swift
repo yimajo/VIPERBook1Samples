@@ -46,21 +46,33 @@ class GithubRepoSearchPresenterTests: XCTestCase {
             XCTContext.runActivity(named: "Section: 0は固定値を返す") { _ in
                 let section = 0
 
-                XCTAssertEqual(view.displayGithubRepoData.numberOfItems(in: section), 3)
+                XCTContext.runActivity(named: "Section: 0") { _ in
+                    let exp = XCTestExpectation()
 
-                XCTAssertEqual(
-                    view.displayGithubRepoData.item(with: IndexPath(item: 0, section: section))?.name,
-                    "objcio/issue-13-viper"
-                )
+                    view.recomendedHandler = { data in
+                        defer {
+                            exp.fulfill()
+                        }
 
-                XCTAssertEqual(
-                    view.displayGithubRepoData.item(with: IndexPath(item: 1, section: section))?.name,
-                    "objcio/issue-13-viper-swift"
-                )
-                XCTAssertEqual(
-                    view.displayGithubRepoData.item(with: IndexPath(item: 2, section: section))?.name,
-                    "pedrohperalta/Articles-iOS-VIPER"
-                )
+                        XCTAssertEqual(data.numberOfItems(in: section), 3)
+
+                        XCTAssertEqual(
+                            data.item(with: IndexPath(item: 0, section: section))?.name,
+                            "objcio/issue-13-viper"
+                        )
+
+                        XCTAssertEqual(
+                            data.item(with: IndexPath(item: 1, section: section))?.name,
+                            "objcio/issue-13-viper-swift"
+                        )
+                        XCTAssertEqual(
+                            data.item(with: IndexPath(item: 2, section: section))?.name,
+                            "pedrohperalta/Articles-iOS-VIPER"
+                        )
+                    }
+
+                    wait(for: [exp], timeout: 5)
+                }
 
                 XCTContext.runActivity(named: "Section: 0をタップ") { _ in
                     XCTContext.runActivity(named: "row: 0をタップ") { _ in
@@ -128,10 +140,12 @@ extension GithubRepoSearchPresenterTests {
     enum TestDouble {
         class ViewController: UIViewController, GithubRepoSearchView {
             let displayGithubRepoData = DisplayGithubRepoData()
+            var recomendedHandler: ((DisplayGithubRepoData) -> ())?
             var searchedHandler: ((DisplayGithubRepoData) -> ())?
 
             func recommended(_ data: [GithubRepoEntity]) {
                 displayGithubRepoData.recommends = data
+                recomendedHandler?(displayGithubRepoData)
             }
 
             func searched(_ data: [GithubRepoEntity]) {
@@ -163,12 +177,8 @@ extension GithubRepoSearchPresenterTests {
             // テスト用入力としてセットし出力するスタブ
             var stubData: [GithubRepoEntity]?
 
-            func execute(
-                input: String,
-                completion: @escaping ((Result<[GithubRepoEntity], Error>) -> ())
-            ) -> URLRequest {
-                completion(.success(self.stubData!))
-                return URLRequest(url: URL(string: "https://example.com")!)
+            func execute(input: String, completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+                completion?(.success(self.stubData!))
             }
         }
     }

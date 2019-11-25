@@ -8,28 +8,35 @@
 
 import Foundation
 
-struct GithubRepoSearchInteractor: UseCase {
-    func execute(
-        input: String,
-        completion: @escaping ((Result<[GithubRepoEntity], Error>) -> ())
-    ) -> URLRequest {
+class GithubRepoSearchInteractor: UseCase {
+
+    var request: GithubRepoSearchAPIRequest?
+
+    func execute(input: String,
+                 completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
         let request = GithubRepoSearchAPIRequest(word: input)
-        return request.perform { result in
+        request.perform { result in
             switch result {
             case .success(let response):
-                completion(.success(response.items))
+                completion?(.success(response.items))
             case .failure(let error):
-                completion(.failure(error))
+                completion?(.failure(error))
             }
         }
+
+        self.request = request
+    }
+
     }
 }
 
-struct GithubRepoSearchAPIRequest {
+class GithubRepoSearchAPIRequest {
     private let host = URL(string: "https://api.github.com")!
     private let path = "/search/repositories"
     private let urlSession: Foundation.URLSession
     private var params: [String: String] { ["q": word] }
+
+    private var task: URLSessionTask?
 
     private let word: String
 
@@ -38,12 +45,19 @@ struct GithubRepoSearchAPIRequest {
         self.word = word
     }
 
-    func perform(completion: @escaping (Result<GithubRepoSearchResponse, Error>) -> ()) -> URLRequest {
+    private func createRequest() -> URLRequest {
         var components = URLComponents(url: host, resolvingAgainstBaseURL: false)!
         components.path = path
         components.queryItems = params.map { URLQueryItem(name: $0.key, value: $0.value) }
 
-        let request = URLRequest(url: components.url!)
+        return URLRequest(url: components.url!)
+    }
+
+    func perform(completion: @escaping (Result<GithubRepoSearchResponse, Error>) -> ()) {
+        task?.cancel()
+
+        let request = createRequest()
+
         let task = urlSession.dataTask(with: request) { data, response, error in
             guard error == nil else {
                 completion(.failure(error!))
@@ -60,7 +74,7 @@ struct GithubRepoSearchAPIRequest {
         }
 
         task.resume()
-        return request
+        self.task = task
     }
 }
 

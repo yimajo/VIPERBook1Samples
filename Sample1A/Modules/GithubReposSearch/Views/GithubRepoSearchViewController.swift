@@ -38,6 +38,7 @@ class GithubRepoSearchViewController: UIViewController {
 extension GithubRepoSearchViewController: GithubRepoSearchView {
     func recommended(_ data: [GithubRepoEntity]) {
         displayData.recommends = data
+        tableView.reloadData()
     }
 
     func searched(_ data: [GithubRepoEntity]) {

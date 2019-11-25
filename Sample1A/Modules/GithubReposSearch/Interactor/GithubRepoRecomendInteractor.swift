@@ -9,9 +9,8 @@
 import Foundation
 
 struct GithubRepoRecommendInteractor: UseCase {
-
-    func execute(input: (), completion: ()) -> [GithubRepoEntity] {
-        [
+    func execute(input: (), completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+        let entities = [
             GithubRepoEntity(
                 name: "objcio/issue-13-viper",
                 htmlUrlString: "https://github.com/objcio/issue-13-viper",
@@ -31,5 +30,7 @@ struct GithubRepoRecommendInteractor: UseCase {
                 stargazersCount: nil
             )
         ]
+
+        completion?(.success(entities))
     }
 }
