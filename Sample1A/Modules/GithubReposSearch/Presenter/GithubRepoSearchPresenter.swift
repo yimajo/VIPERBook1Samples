@@ -60,6 +60,7 @@ extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
     }
 
     func search(_ word: String) {
+        dependency.githubRepoSearch.cancel()
         dependency.githubRepoSearch.execute(input: word) { [weak self] result in
             guard let self = self else { return }
 

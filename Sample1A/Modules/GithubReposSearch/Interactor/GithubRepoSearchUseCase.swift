@@ -26,6 +26,10 @@ class GithubRepoSearchInteractor: UseCase {
 
         self.request = request
     }
+
+    func cancel() {
+        request?.cancel()
+    }
 }
 
 class GithubRepoSearchAPIRequest {
@@ -62,6 +66,12 @@ class GithubRepoSearchAPIRequest {
                 return
             }
 
+            if let httpStatus = response as? HTTPURLResponse,
+                httpStatus.statusCode == 403 {
+                completion(.failure(GithubAPIError.lateLimit))
+                return
+            }
+
             do {
                 let response = try JSONDecoder().decode(GithubRepoSearchResponse.self,
                                                         from: data!)
@@ -74,9 +84,23 @@ class GithubRepoSearchAPIRequest {
         task.resume()
         self.task = task
     }
+
+    func cancel() {
+        task?.cancel()
+    }
 }
 
 struct GithubRepoSearchResponse: Decodable {
     let items: [GithubRepoEntity]
 }
 
+enum GithubAPIError: Error, LocalizedError {
+    case lateLimit
+
+    var errorDescription: String? {
+        switch self {
+        case .lateLimit:
+            return "API rate limit exceeded."
+        }
+    }
+}
