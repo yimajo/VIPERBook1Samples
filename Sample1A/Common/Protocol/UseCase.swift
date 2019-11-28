@@ -17,7 +17,7 @@ protocol UseCase {
 }
 
 class AnyUseCaseBox<Parameters, Success> {
-    func execute(parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
+    func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
         fatalError()
     }
 
@@ -33,7 +33,7 @@ final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Parameters, T.Success> {
         self.base = base
     }
 
-    override func execute(parameters: T.Parameters, completion: ((Result<T.Success, Error>) -> ())?) {
+    override func execute(_ parameters: T.Parameters, completion: ((Result<T.Success, Error>) -> ())?) {
         base.execute(parameters, completion: completion)
     }
 
@@ -50,7 +50,7 @@ final class AnyUseCase<Parameters, Success>: UseCase {
     }
 
     func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
-        box.execute(parameters: parameters, completion: completion)
+        box.execute(parameters, completion: completion)
     }
     func cancel() {
         box.cancel()
