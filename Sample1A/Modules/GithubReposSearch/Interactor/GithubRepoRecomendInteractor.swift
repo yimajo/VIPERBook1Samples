@@ -33,4 +33,6 @@ struct GithubRepoRecommendInteractor: UseCase {
 
         completion?(.success(entities))
     }
+
+    func cancel() { }
 }

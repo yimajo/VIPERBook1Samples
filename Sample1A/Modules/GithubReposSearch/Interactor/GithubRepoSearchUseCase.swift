@@ -26,6 +26,10 @@ class GithubRepoSearchInteractor: UseCase {
 
         self.request = request
     }
+
+    func cancel() {
+        request?.cancel()
+    }
 }
 
 class GithubRepoSearchAPIRequest {
@@ -73,6 +77,10 @@ class GithubRepoSearchAPIRequest {
 
         task.resume()
         self.task = task
+    }
+
+    func cancel() {
+        task?.cancel()
     }
 }
 

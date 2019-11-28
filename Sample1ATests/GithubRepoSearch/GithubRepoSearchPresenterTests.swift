@@ -180,6 +180,8 @@ extension GithubRepoSearchPresenterTests {
             func execute(input: String, completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
                 completion?(.success(self.stubData!))
             }
+
+            func cancel() {}
         }
     }
 }

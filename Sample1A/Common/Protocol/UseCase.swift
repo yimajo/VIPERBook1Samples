@@ -13,10 +13,15 @@ protocol UseCase {
     associatedtype Success
 
     func execute(input: Input, completion: ((Result<Success, Error>) -> ())?)
+    func cancel()
 }
 
 class AnyUseCaseBox<Input, Success> {
     func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
+        fatalError()
+    }
+
+    func cancel() {
         fatalError()
     }
 }
@@ -31,6 +36,10 @@ final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Input, T.Success> {
     override func execute(input: T.Input, completion: ((Result<T.Success, Error>) -> ())?) {
         base.execute(input: input, completion: completion)
     }
+
+    override func cancel() {
+        base.cancel()
+    }
 }
 
 final class AnyUseCase<Input, Success>: UseCase {
@@ -42,5 +51,8 @@ final class AnyUseCase<Input, Success>: UseCase {
 
     func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
         box.execute(input: input, completion: completion)
+    }
+    func cancel() {
+        box.cancel()
     }
 }
