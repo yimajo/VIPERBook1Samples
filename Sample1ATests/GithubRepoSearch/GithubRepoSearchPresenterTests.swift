@@ -177,7 +177,7 @@ extension GithubRepoSearchPresenterTests {
             // テスト用入力としてセットし出力するスタブ
             var stubData: [GithubRepoEntity]?
 
-            func execute(input: String, completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+            func execute(_ parameters: String, completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
                 completion?(.success(self.stubData!))
             }
 

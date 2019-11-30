@@ -22,7 +22,7 @@ protocol GithubRepoSearchView: AnyObject {
 class GithubRepoSearchPresenter {
     struct Dependency {
         let wireframe: GithubReposSearchWireframe
-        let githubRepoRecommend: AnyUseCase<(), [GithubRepoEntity]>
+        let githubRepoRecommend: AnyUseCase<Void, [GithubRepoEntity]>
         let githubRepoSearch: AnyUseCase<String, [GithubRepoEntity]>
     }
 
@@ -54,14 +54,14 @@ class GithubRepoSearchPresenter {
 
 extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
     func viewDidLoad() {
-        dependency.githubRepoRecommend.execute(input: (), completion: { [weak self] result in
+        dependency.githubRepoRecommend.execute(()) { [weak self] result in
             self?.recommends = try! result.get()
-        })
+        }
     }
 
     func search(_ word: String) {
         dependency.githubRepoSearch.cancel()
-        dependency.githubRepoSearch.execute(input: word) { [weak self] result in
+        dependency.githubRepoSearch.execute(word) { [weak self] result in
             guard let self = self else { return }
 
             DispatchQueue.main.async {

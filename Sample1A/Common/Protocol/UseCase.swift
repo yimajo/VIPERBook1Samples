@@ -9,15 +9,15 @@
 import Foundation
 
 protocol UseCase {
-    associatedtype Input
+    associatedtype Parameters
     associatedtype Success
 
-    func execute(input: Input, completion: ((Result<Success, Error>) -> ())?)
+    func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?)
     func cancel()
 }
 
-class AnyUseCaseBox<Input, Success> {
-    func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
+class AnyUseCaseBox<Parameters, Success> {
+    func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
         fatalError()
     }
 
@@ -26,15 +26,15 @@ class AnyUseCaseBox<Input, Success> {
     }
 }
 
-final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Input, T.Success> {
+final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Parameters, T.Success> {
     private let base: T
 
     init(_ base: T) {
         self.base = base
     }
 
-    override func execute(input: T.Input, completion: ((Result<T.Success, Error>) -> ())?) {
-        base.execute(input: input, completion: completion)
+    override func execute(_ parameters: T.Parameters, completion: ((Result<T.Success, Error>) -> ())?) {
+        base.execute(parameters, completion: completion)
     }
 
     override func cancel() {
@@ -42,15 +42,15 @@ final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Input, T.Success> {
     }
 }
 
-final class AnyUseCase<Input, Success>: UseCase {
-    private let box: AnyUseCaseBox<Input, Success>
+final class AnyUseCase<Parameters, Success>: UseCase {
+    private let box: AnyUseCaseBox<Parameters, Success>
 
-    init<T: UseCase>(_ base: T) where T.Input == Input, T.Success == Success {
+    init<T: UseCase>(_ base: T) where T.Parameters == Parameters, T.Success == Success {
         box = UseCaseBox<T>(base)
     }
 
-    func execute(input: Input, completion: ((Result<Success, Error>) -> ())?) {
-        box.execute(input: input, completion: completion)
+    func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
+        box.execute(parameters, completion: completion)
     }
     func cancel() {
         box.cancel()

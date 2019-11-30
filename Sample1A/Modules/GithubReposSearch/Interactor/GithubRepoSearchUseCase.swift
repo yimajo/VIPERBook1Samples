@@ -12,9 +12,9 @@ class GithubRepoSearchInteractor: UseCase {
 
     var request: GithubRepoSearchAPIRequest?
 
-    func execute(input: String,
+    func execute(_ parameters: String,
                  completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
-        let request = GithubRepoSearchAPIRequest(word: input)
+        let request = GithubRepoSearchAPIRequest(word: parameters)
         request.perform { result in
             switch result {
             case .success(let response):

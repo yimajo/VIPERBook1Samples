@@ -9,7 +9,7 @@
 import Foundation
 
 struct GithubRepoRecommendInteractor: UseCase {
-    func execute(input: (), completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+    func execute(_ parameters: Void = (), completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
         let entities = [
             GithubRepoEntity(
                 name: "objcio/issue-13-viper",
