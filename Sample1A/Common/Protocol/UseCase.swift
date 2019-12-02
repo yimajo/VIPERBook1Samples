@@ -16,32 +16,6 @@ protocol UseCase {
     func cancel()
 }
 
-class AnyUseCaseBox<Parameters, Success> {
-    func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
-        fatalError()
-    }
-
-    func cancel() {
-        fatalError()
-    }
-}
-
-final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Parameters, T.Success> {
-    private let base: T
-
-    init(_ base: T) {
-        self.base = base
-    }
-
-    override func execute(_ parameters: T.Parameters, completion: ((Result<T.Success, Error>) -> ())?) {
-        base.execute(parameters, completion: completion)
-    }
-
-    override func cancel() {
-        base.cancel()
-    }
-}
-
 final class AnyUseCase<Parameters, Success>: UseCase {
     private let box: AnyUseCaseBox<Parameters, Success>
 
@@ -55,4 +29,33 @@ final class AnyUseCase<Parameters, Success>: UseCase {
     func cancel() {
         box.cancel()
     }
+}
+
+private extension AnyUseCase {
+    class AnyUseCaseBox<Parameters, Success> {
+        func execute(_ parameters: Parameters, completion: ((Result<Success, Error>) -> ())?) {
+            fatalError()
+        }
+
+        func cancel() {
+            fatalError()
+        }
+    }
+
+    final class UseCaseBox<T: UseCase>: AnyUseCaseBox<T.Parameters, T.Success> {
+        private let base: T
+
+        init(_ base: T) {
+            self.base = base
+        }
+
+        override func execute(_ parameters: T.Parameters, completion: ((Result<T.Success, Error>) -> ())?) {
+            base.execute(parameters, completion: completion)
+        }
+
+        override func cancel() {
+            base.cancel()
+        }
+    }
+
 }
