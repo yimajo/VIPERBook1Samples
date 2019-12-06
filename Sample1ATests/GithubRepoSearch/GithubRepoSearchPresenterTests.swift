@@ -76,17 +76,26 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
                 XCTContext.runActivity(named: "Section: 0をタップ") { _ in
                     XCTContext.runActivity(named: "row: 0をタップ") { _ in
-                        presenter.selectItem(with: IndexPath(row: 0, section: section))
+                        let indexPath = IndexPath(row: 0, section: section)
+
+                        let entity = view.displayGithubRepoData.item(with: indexPath)!
+                        presenter.select(entity)
                         XCTAssertEqual(router.githubRepoEntity?.name, "objcio/issue-13-viper")
                     }
 
                     XCTContext.runActivity(named: "row: 1をタップ") { _ in
-                        presenter.selectItem(with: IndexPath(row: 1, section: section))
+                        let indexPath = IndexPath(row: 1, section: section)
+
+                        let entity = view.displayGithubRepoData.item(with: indexPath)!
+                        presenter.select(entity)
                         XCTAssertEqual(router.githubRepoEntity?.name, "objcio/issue-13-viper-swift")
                     }
 
                     XCTContext.runActivity(named: "row: 2をタップ") { _ in
-                        presenter.selectItem(with: IndexPath(row: 2, section: section))
+                        let indexPath = IndexPath(row: 2, section: section)
+
+                        let entity = view.displayGithubRepoData.item(with: indexPath)!
+                        presenter.select(entity)
                         XCTAssertEqual(router.githubRepoEntity?.name, "pedrohperalta/Articles-iOS-VIPER")
                     }
                 }
@@ -125,7 +134,10 @@ class GithubRepoSearchPresenterTests: XCTestCase {
                     }
 
                     XCTContext.runActivity(named: "タップ") { _ in
-                        self.presenter.selectItem(with: IndexPath(row: 0, section: section))
+                        let indexPath = IndexPath(row: 0, section: section)
+
+                        let entity = self.view.displayGithubRepoData.item(with: indexPath)!
+                        self.presenter.select(entity)
                         XCTAssertEqual(self.router.githubRepoEntity?.name, "name0")
                     }
                 }
