@@ -11,7 +11,7 @@ import Foundation
 protocol GithubRepoSearchPresentation: AnyObject {
     func viewDidLoad()
     func search(_ word: String)
-    func selectItem(with indexPath: IndexPath)
+    func select(_ entity: GithubRepoEntity)
 }
 
 protocol GithubRepoSearchView: AnyObject {
@@ -79,19 +79,8 @@ extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
 
     // MARK: - wireframe
 
-    func selectItem(with indexPath: IndexPath) {
-        switch DisplayGithubRepoData.Section(rawValue: indexPath.section)! {
-        case .recommend:
-            guard (0 ..< recommends.count).contains(indexPath.row) else { return }
-
-            let entity = recommends[indexPath.row]
-            dependency.wireframe.presentDetail(entity)
-        case .search:
-            guard (0 ..< searchResultEntities.count).contains(indexPath.row) else { return }
-
-            let entity = searchResultEntities[indexPath.row]
-            dependency.wireframe.presentDetail(entity)
-        }
+    func select(_ entity: GithubRepoEntity) {
+        dependency.wireframe.presentDetail(entity)
     }
 }
 

@@ -94,7 +94,8 @@ extension GithubRepoSearchViewController: UITableViewDataSource {
 
 extension GithubRepoSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dependency.presenter.selectItem(with: indexPath)
+        let entity = displayData.item(with: indexPath)!
+        dependency.presenter.select(entity)
     }
 }
 
