@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol AppDependencies {
+    // UIViewControllerを返すようにしてほしい
+    // 依存性のごちゃごちゃはassembleでやって外に出すときはUIViewController
+    func assembleGithubRepoSearchModule() -> UIViewController
+
+    func assembleGithubRepoDetailModule(githubRepoEntity: GithubRepoEntity) -> UIViewController
+}
+
 // クリーンアーキテクチャ本でいうところの「メインモジュール」
 // テスト時に必要があれば入れ替える
 public struct AppDefaultDependencies {
@@ -18,14 +26,6 @@ public struct AppDefaultDependencies {
     public func rootViewController() -> UIViewController {
         return assembleGithubRepoSearchModule()
     }
-}
-
-protocol AppDependencies {
-    // UIViewControllerを返すようにしてほしい
-    // 依存性のごちゃごちゃはassembleでやって外に出すときはUIViewController
-    func assembleGithubRepoSearchModule() -> UIViewController
-
-    func assembleGithubRepoDetailModule(githubRepoEntity: GithubRepoEntity) -> UIViewController
 }
 
 extension AppDefaultDependencies: AppDependencies {
