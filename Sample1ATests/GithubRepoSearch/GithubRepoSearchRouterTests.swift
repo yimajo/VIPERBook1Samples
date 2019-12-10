@@ -13,7 +13,7 @@ class GithubRepoSearchRouterTests: XCTestCase {
     private var router: GithubRepoSearchRouter!
     // テストの範囲内で本物と同じように動作するTest DoubleはFake Object。
     // 実際のGithubRepoSearchViewControllerを使うとライフサイクルが動作してしまうので同じ動作をすればいいのでFake。
-    private let searchViewController = UIViewController()
+    private let searchViewController = AppTestDependencies.TestDouble.SearchViewController()
 
     override func setUp() {
         let navigationController = UINavigationController(rootViewController: searchViewController)
@@ -43,7 +43,7 @@ class GithubRepoSearchRouterTests: XCTestCase {
             }
 
             let pushedViewController = self.searchViewController.navigationController?.visibleViewController
-            XCTAssertTrue(pushedViewController is AppTestDependencies.TestDouble.ViewController)
+            XCTAssertTrue(pushedViewController is AppTestDependencies.TestDouble.DetailViewController)
         }
 
         wait(for: [exp], timeout: 5)

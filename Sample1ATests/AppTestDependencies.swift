@@ -13,7 +13,7 @@ struct AppTestDependencies: AppDependencies {
 
     func assembleGithubRepoSearchModule() -> UIViewController {
         // 今のところ使ってないDummyObject
-        let viewController = TestDouble.ViewController()
+        let viewController = TestDouble.SearchViewController()
         return viewController
     }
 
@@ -21,13 +21,14 @@ struct AppTestDependencies: AppDependencies {
         githubRepoEntity: GithubRepoEntity
     ) -> UIViewController { // UIViewControllerでないとRouterが具体的なViewControllerを知ってしまう
         // SearchModuleのrouterがこれを呼び出してしまうのでTestDoubleに置き換える
-        let viewController = TestDouble.ViewController()
+        let viewController = TestDouble.DetailViewController()
         return viewController
     }
 }
 
 extension AppTestDependencies {
     enum TestDouble {
-        class ViewController: UIViewController {}
+        class SearchViewController: UIViewController {}
+        class DetailViewController: UIViewController {}
     }
 }
