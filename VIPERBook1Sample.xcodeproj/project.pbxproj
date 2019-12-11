@@ -11,31 +11,7 @@
 		A51D18852382BD0400115277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D18832382BD0400115277 /* Main.storyboard */; };
 		A51D18872382BD0700115277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51D18862382BD0700115277 /* Assets.xcassets */; };
 		A51D188A2382BD0700115277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D18882382BD0700115277 /* LaunchScreen.storyboard */; };
-		A51D19032382E33C00115277 /* Sample1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51D18FA2382E33C00115277 /* Sample1.framework */; };
-		A51D190C2382E33C00115277 /* Sample1.h in Headers */ = {isa = PBXBuildFile; fileRef = A51D18FC2382E33C00115277 /* Sample1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A51D190F2382E33C00115277 /* Sample1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51D18FA2382E33C00115277 /* Sample1.framework */; };
-		A51D19102382E33C00115277 /* Sample1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A51D18FA2382E33C00115277 /* Sample1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A51D19192382E3C500115277 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D19182382E3C500115277 /* Storyboard.storyboard */; };
-		A51D191F2382E4D200115277 /* GithubRepoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D191C2382E4D200115277 /* GithubRepoEntity.swift */; };
-		A51D19202382E4D200115277 /* DependencyInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D191E2382E4D200115277 /* DependencyInjectable.swift */; };
-		A51D19262382E54600115277 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19252382E54600115277 /* AppDependencies.swift */; };
-		A51D19282382E57D00115277 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19272382E57D00115277 /* RootRouter.swift */; };
-		A51D193E2382E5D800115277 /* GithubRepoSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D192C2382E5D800115277 /* GithubRepoSearchPresenter.swift */; };
-		A51D193F2382E5D800115277 /* GithubRepoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D192E2382E5D800115277 /* GithubRepoSearchViewController.swift */; };
-		A51D19402382E5D800115277 /* GithubRepoSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D192F2382E5D800115277 /* GithubRepoSearch.storyboard */; };
-		A51D19412382E5D800115277 /* GithubRepoSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19312382E5D800115277 /* GithubRepoSearchUseCase.swift */; };
-		A51D19422382E5D800115277 /* GithubRepoSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19332382E5D800115277 /* GithubRepoSearchRouter.swift */; };
-		A51D19432382E5D800115277 /* GithubRepoDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19362382E5D800115277 /* GithubRepoDetailPresentation.swift */; };
-		A51D19442382E5D800115277 /* GithubRepoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19372382E5D800115277 /* GithubRepoDetailPresenter.swift */; };
-		A51D19452382E5D800115277 /* GithubRepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19392382E5D800115277 /* GithubRepoDetailViewController.swift */; };
-		A51D19462382E5D800115277 /* GithubRepoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D193A2382E5D800115277 /* GithubRepoDetail.storyboard */; };
-		A51D19472382E5D800115277 /* GithubRepoDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D193C2382E5D800115277 /* GithubRepoDetailWireframe.swift */; };
-		A51D19482382E5D800115277 /* GithubRepoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D193D2382E5D800115277 /* GithubRepoDetailRouter.swift */; };
 		A51D194A2382E7BF00115277 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19492382E7BF00115277 /* MainViewController.swift */; };
-		A51D19512382F0DB00115277 /* AppTestDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D194B2382F0DB00115277 /* AppTestDependencies.swift */; };
-		A51D19522382F0DB00115277 /* GithubRepoDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D194D2382F0DB00115277 /* GithubRepoDetailPresenterTests.swift */; };
-		A51D19532382F0DB00115277 /* GithubRepoSearchRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D194F2382F0DB00115277 /* GithubRepoSearchRouterTests.swift */; };
-		A51D19542382F0DB00115277 /* GithubRepoSearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19502382F0DB00115277 /* GithubRepoSearchPresenterTests.swift */; };
 		A51D19BC238982C800115277 /* Sample1A.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51D19B3238982C800115277 /* Sample1A.framework */; };
 		A51D19C5238982C800115277 /* Sample1A.h in Headers */ = {isa = PBXBuildFile; fileRef = A51D19B5238982C800115277 /* Sample1A.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A51D19C8238982C800115277 /* Sample1A.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51D19B3238982C800115277 /* Sample1A.framework */; };
@@ -63,27 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A51D19042382E33C00115277 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A51D18722382BD0400115277 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A51D18F92382E33C00115277;
-			remoteInfo = Sample1;
-		};
-		A51D19062382E33C00115277 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A51D18722382BD0400115277 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A51D18792382BD0400115277;
-			remoteInfo = VIPERBook1Sample;
-		};
-		A51D190D2382E33C00115277 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A51D18722382BD0400115277 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A51D18F92382E33C00115277;
-			remoteInfo = Sample1;
-		};
 		A51D19BD238982C800115277 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A51D18722382BD0400115277 /* Project object */;
@@ -115,7 +70,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A51D19C9238982C800115277 /* Sample1A.framework in Embed Frameworks */,
-				A51D19102382E33C00115277 /* Sample1.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,32 +83,7 @@
 		A51D18862382BD0700115277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A51D18892382BD0700115277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A51D188B2382BD0700115277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A51D18FA2382E33C00115277 /* Sample1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sample1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A51D18FC2382E33C00115277 /* Sample1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sample1.h; sourceTree = "<group>"; };
-		A51D18FD2382E33C00115277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A51D19022382E33C00115277 /* Sample1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sample1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A51D190B2382E33C00115277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A51D19182382E3C500115277 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		A51D191C2382E4D200115277 /* GithubRepoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoEntity.swift; sourceTree = "<group>"; };
-		A51D191E2382E4D200115277 /* DependencyInjectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjectable.swift; sourceTree = "<group>"; };
-		A51D19252382E54600115277 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
-		A51D19272382E57D00115277 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		A51D192C2382E5D800115277 /* GithubRepoSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchPresenter.swift; sourceTree = "<group>"; };
-		A51D192E2382E5D800115277 /* GithubRepoSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchViewController.swift; sourceTree = "<group>"; };
-		A51D192F2382E5D800115277 /* GithubRepoSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GithubRepoSearch.storyboard; sourceTree = "<group>"; };
-		A51D19312382E5D800115277 /* GithubRepoSearchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchUseCase.swift; sourceTree = "<group>"; };
-		A51D19332382E5D800115277 /* GithubRepoSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchRouter.swift; sourceTree = "<group>"; };
-		A51D19362382E5D800115277 /* GithubRepoDetailPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresentation.swift; sourceTree = "<group>"; };
-		A51D19372382E5D800115277 /* GithubRepoDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresenter.swift; sourceTree = "<group>"; };
-		A51D19392382E5D800115277 /* GithubRepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailViewController.swift; sourceTree = "<group>"; };
-		A51D193A2382E5D800115277 /* GithubRepoDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GithubRepoDetail.storyboard; sourceTree = "<group>"; };
-		A51D193C2382E5D800115277 /* GithubRepoDetailWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailWireframe.swift; sourceTree = "<group>"; };
-		A51D193D2382E5D800115277 /* GithubRepoDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailRouter.swift; sourceTree = "<group>"; };
 		A51D19492382E7BF00115277 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A51D194B2382F0DB00115277 /* AppTestDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTestDependencies.swift; sourceTree = "<group>"; };
-		A51D194D2382F0DB00115277 /* GithubRepoDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresenterTests.swift; sourceTree = "<group>"; };
-		A51D194F2382F0DB00115277 /* GithubRepoSearchRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchRouterTests.swift; sourceTree = "<group>"; };
-		A51D19502382F0DB00115277 /* GithubRepoSearchPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchPresenterTests.swift; sourceTree = "<group>"; };
 		A51D19B3238982C800115277 /* Sample1A.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sample1A.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51D19B5238982C800115277 /* Sample1A.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sample1A.h; sourceTree = "<group>"; };
 		A51D19B6238982C800115277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,22 +117,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51D19C8238982C800115277 /* Sample1A.framework in Frameworks */,
-				A51D190F2382E33C00115277 /* Sample1.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A51D18F72382E33C00115277 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A51D18FF2382E33C00115277 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A51D19032382E33C00115277 /* Sample1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				A51D187C2382BD0400115277 /* VIPERBook1Sample */,
-				A51D18FB2382E33C00115277 /* Sample1 */,
-				A51D19082382E33C00115277 /* Sample1Tests */,
 				A51D19B4238982C800115277 /* Sample1A */,
 				A51D19C1238982C800115277 /* Sample1ATests */,
 				A51D187B2382BD0400115277 /* Products */,
@@ -241,8 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				A51D187A2382BD0400115277 /* VIPERBook1Sample.app */,
-				A51D18FA2382E33C00115277 /* Sample1.framework */,
-				A51D19022382E33C00115277 /* Sample1Tests.xctest */,
 				A51D19B3238982C800115277 /* Sample1A.framework */,
 				A51D19BB238982C800115277 /* Sample1ATests.xctest */,
 			);
@@ -260,163 +169,6 @@
 				A51D19492382E7BF00115277 /* MainViewController.swift */,
 			);
 			path = VIPERBook1Sample;
-			sourceTree = "<group>";
-		};
-		A51D18FB2382E33C00115277 /* Sample1 */ = {
-			isa = PBXGroup;
-			children = (
-				A51D19252382E54600115277 /* AppDependencies.swift */,
-				A51D19272382E57D00115277 /* RootRouter.swift */,
-				A51D191A2382E4D200115277 /* Common */,
-				A51D19292382E5D800115277 /* Modules */,
-				A51D18FC2382E33C00115277 /* Sample1.h */,
-				A51D18FD2382E33C00115277 /* Info.plist */,
-				A51D19182382E3C500115277 /* Storyboard.storyboard */,
-			);
-			path = Sample1;
-			sourceTree = "<group>";
-		};
-		A51D19082382E33C00115277 /* Sample1Tests */ = {
-			isa = PBXGroup;
-			children = (
-				A51D194B2382F0DB00115277 /* AppTestDependencies.swift */,
-				A51D194C2382F0DB00115277 /* GithubRepoDetail */,
-				A51D194E2382F0DB00115277 /* GithubRepoSearch */,
-				A51D190B2382E33C00115277 /* Info.plist */,
-			);
-			path = Sample1Tests;
-			sourceTree = "<group>";
-		};
-		A51D191A2382E4D200115277 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				A51D191B2382E4D200115277 /* Entity */,
-				A51D191D2382E4D200115277 /* Protocol */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		A51D191B2382E4D200115277 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				A51D191C2382E4D200115277 /* GithubRepoEntity.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		A51D191D2382E4D200115277 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				A51D191E2382E4D200115277 /* DependencyInjectable.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		A51D19292382E5D800115277 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				A51D192A2382E5D800115277 /* GithubReposSearch */,
-				A51D19342382E5D800115277 /* GithubReposDetail */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		A51D192A2382E5D800115277 /* GithubReposSearch */ = {
-			isa = PBXGroup;
-			children = (
-				A51D192D2382E5D800115277 /* Views */,
-				A51D192B2382E5D800115277 /* Presenter */,
-				A51D19302382E5D800115277 /* Interactor */,
-				A51D19322382E5D800115277 /* Router */,
-			);
-			path = GithubReposSearch;
-			sourceTree = "<group>";
-		};
-		A51D192B2382E5D800115277 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A51D192C2382E5D800115277 /* GithubRepoSearchPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A51D192D2382E5D800115277 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A51D192E2382E5D800115277 /* GithubRepoSearchViewController.swift */,
-				A51D192F2382E5D800115277 /* GithubRepoSearch.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A51D19302382E5D800115277 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				A51D19312382E5D800115277 /* GithubRepoSearchUseCase.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		A51D19322382E5D800115277 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A51D19332382E5D800115277 /* GithubRepoSearchRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		A51D19342382E5D800115277 /* GithubReposDetail */ = {
-			isa = PBXGroup;
-			children = (
-				A51D19382382E5D800115277 /* Views */,
-				A51D19352382E5D800115277 /* Presenter */,
-				A51D193B2382E5D800115277 /* Router */,
-			);
-			path = GithubReposDetail;
-			sourceTree = "<group>";
-		};
-		A51D19352382E5D800115277 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A51D19362382E5D800115277 /* GithubRepoDetailPresentation.swift */,
-				A51D19372382E5D800115277 /* GithubRepoDetailPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A51D19382382E5D800115277 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A51D19392382E5D800115277 /* GithubRepoDetailViewController.swift */,
-				A51D193A2382E5D800115277 /* GithubRepoDetail.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A51D193B2382E5D800115277 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A51D193C2382E5D800115277 /* GithubRepoDetailWireframe.swift */,
-				A51D193D2382E5D800115277 /* GithubRepoDetailRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		A51D194C2382F0DB00115277 /* GithubRepoDetail */ = {
-			isa = PBXGroup;
-			children = (
-				A51D194D2382F0DB00115277 /* GithubRepoDetailPresenterTests.swift */,
-			);
-			path = GithubRepoDetail;
-			sourceTree = "<group>";
-		};
-		A51D194E2382F0DB00115277 /* GithubRepoSearch */ = {
-			isa = PBXGroup;
-			children = (
-				A51D194F2382F0DB00115277 /* GithubRepoSearchRouterTests.swift */,
-				A51D19502382F0DB00115277 /* GithubRepoSearchPresenterTests.swift */,
-			);
-			path = GithubRepoSearch;
 			sourceTree = "<group>";
 		};
 		A51D19B4238982C800115277 /* Sample1A */ = {
@@ -579,14 +331,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A51D18F52382E33C00115277 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A51D190C2382E33C00115277 /* Sample1.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A51D19AE238982C800115277 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -610,50 +354,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				A51D190E2382E33C00115277 /* PBXTargetDependency */,
 				A51D19C7238982C800115277 /* PBXTargetDependency */,
 			);
 			name = VIPERBook1Sample;
 			productName = VIPERBook1Sample;
 			productReference = A51D187A2382BD0400115277 /* VIPERBook1Sample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		A51D18F92382E33C00115277 /* Sample1 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A51D19112382E33C00115277 /* Build configuration list for PBXNativeTarget "Sample1" */;
-			buildPhases = (
-				A51D18F52382E33C00115277 /* Headers */,
-				A51D18F62382E33C00115277 /* Sources */,
-				A51D18F72382E33C00115277 /* Frameworks */,
-				A51D18F82382E33C00115277 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Sample1;
-			productName = Sample1;
-			productReference = A51D18FA2382E33C00115277 /* Sample1.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A51D19012382E33C00115277 /* Sample1Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A51D19152382E33C00115277 /* Build configuration list for PBXNativeTarget "Sample1Tests" */;
-			buildPhases = (
-				A51D18FE2382E33C00115277 /* Sources */,
-				A51D18FF2382E33C00115277 /* Frameworks */,
-				A51D19002382E33C00115277 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A51D19052382E33C00115277 /* PBXTargetDependency */,
-				A51D19072382E33C00115277 /* PBXTargetDependency */,
-			);
-			name = Sample1Tests;
-			productName = Sample1Tests;
-			productReference = A51D19022382E33C00115277 /* Sample1Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A51D19B2238982C800115277 /* Sample1A */ = {
 			isa = PBXNativeTarget;
@@ -705,13 +411,6 @@
 					A51D18792382BD0400115277 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
-					A51D18F92382E33C00115277 = {
-						CreatedOnToolsVersion = 11.2.1;
-					};
-					A51D19012382E33C00115277 = {
-						CreatedOnToolsVersion = 11.2.1;
-						TestTargetID = A51D18792382BD0400115277;
-					};
 					A51D19B2238982C800115277 = {
 						CreatedOnToolsVersion = 11.2.1;
 						LastSwiftMigration = 1120;
@@ -736,8 +435,6 @@
 			projectRoot = "";
 			targets = (
 				A51D18792382BD0400115277 /* VIPERBook1Sample */,
-				A51D18F92382E33C00115277 /* Sample1 */,
-				A51D19012382E33C00115277 /* Sample1Tests */,
 				A51D19B2238982C800115277 /* Sample1A */,
 				A51D19BA238982C800115277 /* Sample1ATests */,
 			);
@@ -752,23 +449,6 @@
 				A51D188A2382BD0700115277 /* LaunchScreen.storyboard in Resources */,
 				A51D18872382BD0700115277 /* Assets.xcassets in Resources */,
 				A51D18852382BD0400115277 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A51D18F82382E33C00115277 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A51D19192382E3C500115277 /* Storyboard.storyboard in Resources */,
-				A51D19402382E5D800115277 /* GithubRepoSearch.storyboard in Resources */,
-				A51D19462382E5D800115277 /* GithubRepoDetail.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A51D19002382E33C00115277 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,37 +477,6 @@
 			files = (
 				A51D194A2382E7BF00115277 /* MainViewController.swift in Sources */,
 				A51D187E2382BD0400115277 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A51D18F62382E33C00115277 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A51D19482382E5D800115277 /* GithubRepoDetailRouter.swift in Sources */,
-				A51D19282382E57D00115277 /* RootRouter.swift in Sources */,
-				A51D19452382E5D800115277 /* GithubRepoDetailViewController.swift in Sources */,
-				A51D19412382E5D800115277 /* GithubRepoSearchUseCase.swift in Sources */,
-				A51D193E2382E5D800115277 /* GithubRepoSearchPresenter.swift in Sources */,
-				A51D19262382E54600115277 /* AppDependencies.swift in Sources */,
-				A51D19442382E5D800115277 /* GithubRepoDetailPresenter.swift in Sources */,
-				A51D191F2382E4D200115277 /* GithubRepoEntity.swift in Sources */,
-				A51D19202382E4D200115277 /* DependencyInjectable.swift in Sources */,
-				A51D19472382E5D800115277 /* GithubRepoDetailWireframe.swift in Sources */,
-				A51D193F2382E5D800115277 /* GithubRepoSearchViewController.swift in Sources */,
-				A51D19432382E5D800115277 /* GithubRepoDetailPresentation.swift in Sources */,
-				A51D19422382E5D800115277 /* GithubRepoSearchRouter.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A51D18FE2382E33C00115277 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A51D19522382F0DB00115277 /* GithubRepoDetailPresenterTests.swift in Sources */,
-				A51D19532382F0DB00115277 /* GithubRepoSearchRouterTests.swift in Sources */,
-				A51D19512382F0DB00115277 /* AppTestDependencies.swift in Sources */,
-				A51D19542382F0DB00115277 /* GithubRepoSearchPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,21 +515,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A51D19052382E33C00115277 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A51D18F92382E33C00115277 /* Sample1 */;
-			targetProxy = A51D19042382E33C00115277 /* PBXContainerItemProxy */;
-		};
-		A51D19072382E33C00115277 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A51D18792382BD0400115277 /* VIPERBook1Sample */;
-			targetProxy = A51D19062382E33C00115277 /* PBXContainerItemProxy */;
-		};
-		A51D190E2382E33C00115277 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A51D18F92382E33C00115277 /* Sample1 */;
-			targetProxy = A51D190D2382E33C00115277 /* PBXContainerItemProxy */;
-		};
 		A51D19BE238982C800115277 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A51D19B2238982C800115277 /* Sample1A */;
@@ -1070,104 +704,6 @@
 			};
 			name = Release;
 		};
-		A51D19122382E33C00115277 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6T6D4T4X29;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sample1/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.curiosity.Sample1;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A51D19132382E33C00115277 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6T6D4T4X29;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sample1/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.curiosity.Sample1;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A51D19162382E33C00115277 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T6D4T4X29;
-				INFOPLIST_FILE = Sample1Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.curiosity.Sample1Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPERBook1Sample.app/VIPERBook1Sample";
-			};
-			name = Debug;
-		};
-		A51D19172382E33C00115277 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T6D4T4X29;
-				INFOPLIST_FILE = Sample1Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.curiosity.Sample1Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPERBook1Sample.app/VIPERBook1Sample";
-			};
-			name = Release;
-		};
 		A51D19CA238982C800115277 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1288,24 +824,6 @@
 			buildConfigurations = (
 				A51D189A2382BD0800115277 /* Debug */,
 				A51D189B2382BD0800115277 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A51D19112382E33C00115277 /* Build configuration list for PBXNativeTarget "Sample1" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A51D19122382E33C00115277 /* Debug */,
-				A51D19132382E33C00115277 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A51D19152382E33C00115277 /* Build configuration list for PBXNativeTarget "Sample1Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A51D19162382E33C00115277 /* Debug */,
-				A51D19172382E33C00115277 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
