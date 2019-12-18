@@ -10,13 +10,13 @@ import Foundation
 
 struct GithubRepoEntity: Decodable {
     let name: String
-    let htmlUrlString: String
+    let htmlURL: URL
     let description: String?
     let stargazersCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case name
-        case htmlUrlString = "html_url"
+        case htmlURL = "html_url"
         case description
         case stargazersCount = "stargazers_count"
     }

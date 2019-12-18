@@ -29,7 +29,7 @@ class GithubRepoSearchRouterTests: XCTestCase {
         setUp()
         let entity = GithubRepoEntity(
             name: "name0",
-            htmlUrlString: "",
+            htmlURL: URL(string: "html://example.com")!,
             description: "",
             stargazersCount: nil
         )

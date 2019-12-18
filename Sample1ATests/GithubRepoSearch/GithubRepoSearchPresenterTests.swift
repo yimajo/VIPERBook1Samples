@@ -109,8 +109,18 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
         XCTContext.runActivity(named: "searchを呼び出した後") { _ in
             interactor.stubData = [
-                .init(name: "name0", htmlUrlString: "", description: "", stargazersCount: nil),
-                .init(name: "name1", htmlUrlString: "", description: "", stargazersCount: nil)
+                .init(
+                    name: "name0",
+                    htmlURL: URL(string: "http://eaxmple.com/0")!,
+                    description: "",
+                    stargazersCount: nil
+                ),
+                .init(
+                    name: "name1",
+                    htmlURL: URL(string: "http://eaxmple.com/1")!,
+                    description: "",
+                    stargazersCount: nil
+                )
             ]
 
             presenter.search("")

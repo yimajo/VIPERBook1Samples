@@ -19,8 +19,8 @@ class GithubRepoDetailPresenter {
 }
 
 extension GithubRepoDetailPresenter: GithubRepoDetailPresentation {
-    func createLoadRequest(with urlString: String) {
-        let request = URLRequest(url: URL(string: urlString)!)
+    func createLoadRequest(with url: URL) {
+        let request = URLRequest(url: url)
         view?.requestCreated(request)
     }
 }

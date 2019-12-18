@@ -25,7 +25,7 @@ class GithubRepoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dependency.presenter.createLoadRequest(with: dependency.githubRepoEntity.htmlUrlString)
+        dependency.presenter.createLoadRequest(with: dependency.githubRepoEntity.htmlURL)
     }
 }
 
