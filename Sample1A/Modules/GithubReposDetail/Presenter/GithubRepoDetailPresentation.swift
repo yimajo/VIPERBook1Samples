@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GithubRepoDetailPresentation {
-    func createLoadRequest(with urlString: String)
+    func createLoadRequest(with url: URL)
 }
 
 protocol GithubRepoDetailView: class {

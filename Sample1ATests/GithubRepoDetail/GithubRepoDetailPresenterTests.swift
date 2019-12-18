@@ -29,7 +29,7 @@ class GithubRepoDetailPresenterTests: XCTestCase {
         }
 
         XCTContext.runActivity(named: "createLoadRequest後") { _ in
-            presenter.createLoadRequest(with: "https://google.com")
+            presenter.createLoadRequest(with: URL(string:"https://google.com")!)
             XCTContext.runActivity(named: "request作成した") { _ in
                 XCTAssertEqual(view.request?.url, URL(string: "https://google.com"))
             }
