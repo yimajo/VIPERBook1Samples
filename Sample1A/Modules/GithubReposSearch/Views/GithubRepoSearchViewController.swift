@@ -86,7 +86,12 @@ extension GithubRepoSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let entity = displayData.item(with: indexPath)!
-        cell.textLabel?.text = entity.name
+        if let stargazersCount = entity.stargazersCount {
+            cell.textLabel?.text = "\(entity.name), star: \(stargazersCount)"
+        } else {
+            cell.textLabel?.text = "\(entity.name)"
+        }
+
         cell.detailTextLabel?.text = entity.description
         return cell
     }

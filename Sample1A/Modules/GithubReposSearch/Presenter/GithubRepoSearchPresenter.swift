@@ -24,6 +24,7 @@ class GithubRepoSearchPresenter {
         let wireframe: GithubReposSearchWireframe
         let githubRepoRecommend: AnyUseCase<Void, [GithubRepoEntity]>
         let githubRepoSearch: AnyUseCase<String, [GithubRepoEntity]>
+        let githubRepoSort: AnyUseCase<[GithubRepoEntity], [GithubRepoEntity]>
     }
 
     private let dependency: Dependency
@@ -39,8 +40,14 @@ class GithubRepoSearchPresenter {
 
     private var searchResultEntities: [GithubRepoEntity] = [] {
         didSet {
-            DispatchQueue.main.async {
-                self.view?.searched(self.searchResultEntities)
+            dependency.githubRepoSort.execute(searchResultEntities) { [weak self] result in
+                guard let entities = try? result.get() else {
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    self?.view?.searched(entities)
+                }
             }
         }
     }

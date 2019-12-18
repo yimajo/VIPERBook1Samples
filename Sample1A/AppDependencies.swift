@@ -45,7 +45,8 @@ extension AppDefaultDependencies: AppDependencies {
             dependency: .init(
                 wireframe: router,
                 githubRepoRecommend: AnyUseCase(GithubRepoRecommendInteractor()),
-                githubRepoSearch: AnyUseCase(GithubRepoSearchInteractor())
+                githubRepoSearch: AnyUseCase(GithubRepoSearchInteractor()),
+                githubRepoSort: AnyUseCase(GithubRepoSortInteractor())
             )
         )
 

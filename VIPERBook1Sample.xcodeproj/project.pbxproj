@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50DFF2423AA20B30039AE0B /* GithubRepoSortInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50DFF2323AA20B30039AE0B /* GithubRepoSortInteractor.swift */; };
+		A50DFF2623AA340A0039AE0B /* GithubRepoSortInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50DFF2523AA340A0039AE0B /* GithubRepoSortInteractorTests.swift */; };
 		A51D187E2382BD0400115277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D187D2382BD0400115277 /* AppDelegate.swift */; };
 		A51D18852382BD0400115277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D18832382BD0400115277 /* Main.storyboard */; };
 		A51D18872382BD0700115277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51D18862382BD0700115277 /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A50DFF2323AA20B30039AE0B /* GithubRepoSortInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoSortInteractor.swift; sourceTree = "<group>"; };
+		A50DFF2523AA340A0039AE0B /* GithubRepoSortInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoSortInteractorTests.swift; sourceTree = "<group>"; };
 		A51D187A2382BD0400115277 /* VIPERBook1Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERBook1Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51D187D2382BD0400115277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A51D18842382BD0400115277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 			children = (
 				A51D19E12389853E00115277 /* GithubRepoSearchUseCase.swift */,
 				A572062B238A62060055982F /* GithubRepoRecomendInteractor.swift */,
+				A50DFF2323AA20B30039AE0B /* GithubRepoSortInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			children = (
 				A51D19FD2389872200115277 /* GithubRepoSearchRouterTests.swift */,
 				A51D19FE2389872200115277 /* GithubRepoSearchPresenterTests.swift */,
+				A50DFF2523AA340A0039AE0B /* GithubRepoSortInteractorTests.swift */,
 			);
 			path = GithubRepoSearch;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50DFF2423AA20B30039AE0B /* GithubRepoSortInteractor.swift in Sources */,
 				A51D19EF2389853E00115277 /* GithubRepoSearchViewController.swift in Sources */,
 				A51D19F32389853E00115277 /* GithubRepoDetailPresentation.swift in Sources */,
 				A51D19D82389853200115277 /* AppDependencies.swift in Sources */,
@@ -507,6 +514,7 @@
 			files = (
 				A51D19FF2389872200115277 /* GithubRepoDetailPresenterTests.swift in Sources */,
 				A51D1A012389872200115277 /* GithubRepoSearchRouterTests.swift in Sources */,
+				A50DFF2623AA340A0039AE0B /* GithubRepoSortInteractorTests.swift in Sources */,
 				A51D1A002389872200115277 /* AppTestDependencies.swift in Sources */,
 				A51D1A022389872200115277 /* GithubRepoSearchPresenterTests.swift in Sources */,
 			);
