@@ -17,18 +17,19 @@ class GithubRepoSearchPresenterTests: XCTestCase {
     // Presenterの特定の入力によりrouterは特定のメソッドが実行されることを確認することでPresenterの入力を検証する
     private var router: TestDouble.Router!
     // Interactorは通信せずダミーを返す
-    private var interactor: TestDouble.Interactor!
+    private var searchInteractor: TestDouble.SearchInteractor!
 
     override func setUp() {
         router = TestDouble.Router(searchViewController: view)
-        interactor = TestDouble.Interactor()
+        searchInteractor = TestDouble.SearchInteractor()
 
         presenter = GithubRepoSearchPresenter(
             view: view,
             dependency: .init(
                 wireframe: router,
                 githubRepoRecommend: AnyUseCase(GithubRepoRecommendInteractor()),
-                githubRepoSearch: AnyUseCase(interactor)
+                githubRepoSearch: AnyUseCase(searchInteractor),
+                githubRepoSort: AnyUseCase(GithubRepoSortInteractor())
             )
         )
         presenter.viewDidLoad()
@@ -108,21 +109,20 @@ class GithubRepoSearchPresenterTests: XCTestCase {
         }
 
         XCTContext.runActivity(named: "searchを呼び出した後") { _ in
-            interactor.stubData = [
+            searchInteractor.stubData = [
                 .init(
                     name: "name0",
-                    htmlURL: URL(string: "http://eaxmple.com/0")!,
+                    htmlURL: URL(string: "http://example.com/0")!,
                     description: "",
-                    stargazersCount: nil
+                    stargazersCount: 0
                 ),
                 .init(
                     name: "name1",
-                    htmlURL: URL(string: "http://eaxmple.com/1")!,
+                    htmlURL: URL(string: "http://example.com/1")!,
                     description: "",
-                    stargazersCount: nil
-                )
+                    stargazersCount: 1
+                ),
             ]
-
             presenter.search("")
 
             XCTContext.runActivity(named: "Section: 1は用意した値を返しアクセスできる") { _ in
@@ -139,8 +139,8 @@ class GithubRepoSearchPresenterTests: XCTestCase {
                         XCTAssertEqual(data.numberOfSections, 2)
                         XCTAssertEqual(data.numberOfItems(in: section), 2)
 
-                        XCTAssertEqual(data.item(with: IndexPath(item: 0, section: section))?.name, "name0")
-                        XCTAssertEqual(data.item(with: IndexPath(item: 1, section: section))?.name, "name1")
+                        XCTAssertEqual(data.item(with: IndexPath(item: 0, section: section))?.name, "name1")
+                        XCTAssertEqual(data.item(with: IndexPath(item: 1, section: section))?.name, "name0")
                     }
 
                     XCTContext.runActivity(named: "タップ") { _ in
@@ -148,7 +148,7 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
                         let entity = self.view.displayGithubRepoData.item(with: indexPath)!
                         self.presenter.select(entity)
-                        XCTAssertEqual(self.router.githubRepoEntity?.name, "name0")
+                        XCTAssertEqual(self.router.githubRepoEntity?.name, "name1")
                     }
                 }
 
@@ -195,7 +195,7 @@ extension GithubRepoSearchPresenterTests {
             }
         }
 
-        class Interactor: UseCase {
+        class SearchInteractor: UseCase {
             // テスト用入力としてセットし出力するスタブ
             var stubData: [GithubRepoEntity]?
 
