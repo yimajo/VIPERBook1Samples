@@ -30,7 +30,6 @@
 		A51D19F42389853E00115277 /* GithubRepoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E72389853E00115277 /* GithubRepoDetailPresenter.swift */; };
 		A51D19F52389853E00115277 /* GithubRepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E92389853E00115277 /* GithubRepoDetailViewController.swift */; };
 		A51D19F62389853E00115277 /* GithubRepoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D19EA2389853E00115277 /* GithubRepoDetail.storyboard */; };
-		A51D19F72389853E00115277 /* GithubRepoDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19EC2389853E00115277 /* GithubRepoDetailWireframe.swift */; };
 		A51D19F82389853E00115277 /* GithubRepoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19ED2389853E00115277 /* GithubRepoDetailRouter.swift */; };
 		A51D19FF2389872200115277 /* GithubRepoDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19FA2389872200115277 /* GithubRepoDetailPresenterTests.swift */; };
 		A51D1A002389872200115277 /* AppTestDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19FB2389872200115277 /* AppTestDependencies.swift */; };
@@ -105,7 +104,6 @@
 		A51D19E72389853E00115277 /* GithubRepoDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresenter.swift; sourceTree = "<group>"; };
 		A51D19E92389853E00115277 /* GithubRepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailViewController.swift; sourceTree = "<group>"; };
 		A51D19EA2389853E00115277 /* GithubRepoDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GithubRepoDetail.storyboard; sourceTree = "<group>"; };
-		A51D19EC2389853E00115277 /* GithubRepoDetailWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailWireframe.swift; sourceTree = "<group>"; };
 		A51D19ED2389853E00115277 /* GithubRepoDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailRouter.swift; sourceTree = "<group>"; };
 		A51D19FA2389872200115277 /* GithubRepoDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresenterTests.swift; sourceTree = "<group>"; };
 		A51D19FB2389872200115277 /* AppTestDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTestDependencies.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 		A51D19EB2389853E00115277 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				A51D19EC2389853E00115277 /* GithubRepoDetailWireframe.swift */,
 				A51D19ED2389853E00115277 /* GithubRepoDetailRouter.swift */,
 			);
 			path = Router;
@@ -503,7 +500,6 @@
 				A51D19EE2389853E00115277 /* GithubRepoSearchPresenter.swift in Sources */,
 				A51D19D62389853200115277 /* GithubRepoEntity.swift in Sources */,
 				A51D19D72389853200115277 /* DependencyInjectable.swift in Sources */,
-				A51D19F72389853E00115277 /* GithubRepoDetailWireframe.swift in Sources */,
 				A51D19F22389853E00115277 /* GithubRepoSearchRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

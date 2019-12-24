@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol GithubRepoDetailWireframe {
+    var detailViewController: UIViewController { get }
+}
+
 struct GithubRepoDetailRouter: GithubRepoDetailWireframe {
     // このRouterがあるときには確実にVCは存在しているのと循環参照したくないのでunowed
     unowned let detailViewController: UIViewController
