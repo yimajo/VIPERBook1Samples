@@ -1,5 +1,5 @@
 //
-//  DisplayGithubRepoData.swift
+//  GithubRepoViewData.swift
 //  Sample1A
 //
 //  Created by Yoshinori Imajo on 2019/12/24.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DisplayGithubRepoData {
+class GithubRepoViewData {
     enum Section: Int, CaseIterable {
         case recommend
         case search
