@@ -8,6 +8,18 @@
 
 import Foundation
 
+// MARK: - Contract
+
+protocol GithubRepoDetailPresentation {
+    func createLoadRequest(with url: URL)
+}
+
+protocol GithubRepoDetailView: class {
+    func requestCreated(_ request: URLRequest)
+}
+
+// MARK: - Presenter
+
 class GithubRepoDetailPresenter {
     let wireframe: GithubRepoDetailWireframe
     weak var view: GithubRepoDetailView?

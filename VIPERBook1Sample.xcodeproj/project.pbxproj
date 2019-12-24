@@ -24,13 +24,11 @@
 		A51D19EE2389853E00115277 /* GithubRepoSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19DC2389853E00115277 /* GithubRepoSearchPresenter.swift */; };
 		A51D19EF2389853E00115277 /* GithubRepoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19DE2389853E00115277 /* GithubRepoSearchViewController.swift */; };
 		A51D19F02389853E00115277 /* GithubRepoSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D19DF2389853E00115277 /* GithubRepoSearch.storyboard */; };
-		A51D19F12389853E00115277 /* GithubRepoSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E12389853E00115277 /* GithubRepoSearchUseCase.swift */; };
+		A51D19F12389853E00115277 /* GithubRepoSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E12389853E00115277 /* GithubRepoSearchInteractor.swift */; };
 		A51D19F22389853E00115277 /* GithubRepoSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E32389853E00115277 /* GithubRepoSearchRouter.swift */; };
-		A51D19F32389853E00115277 /* GithubRepoDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E62389853E00115277 /* GithubRepoDetailPresentation.swift */; };
 		A51D19F42389853E00115277 /* GithubRepoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E72389853E00115277 /* GithubRepoDetailPresenter.swift */; };
 		A51D19F52389853E00115277 /* GithubRepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19E92389853E00115277 /* GithubRepoDetailViewController.swift */; };
 		A51D19F62389853E00115277 /* GithubRepoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51D19EA2389853E00115277 /* GithubRepoDetail.storyboard */; };
-		A51D19F72389853E00115277 /* GithubRepoDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19EC2389853E00115277 /* GithubRepoDetailWireframe.swift */; };
 		A51D19F82389853E00115277 /* GithubRepoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19ED2389853E00115277 /* GithubRepoDetailRouter.swift */; };
 		A51D19FF2389872200115277 /* GithubRepoDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19FA2389872200115277 /* GithubRepoDetailPresenterTests.swift */; };
 		A51D1A002389872200115277 /* AppTestDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D19FB2389872200115277 /* AppTestDependencies.swift */; };
@@ -99,13 +97,11 @@
 		A51D19DC2389853E00115277 /* GithubRepoSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchPresenter.swift; sourceTree = "<group>"; };
 		A51D19DE2389853E00115277 /* GithubRepoSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchViewController.swift; sourceTree = "<group>"; };
 		A51D19DF2389853E00115277 /* GithubRepoSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GithubRepoSearch.storyboard; sourceTree = "<group>"; };
-		A51D19E12389853E00115277 /* GithubRepoSearchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchUseCase.swift; sourceTree = "<group>"; };
+		A51D19E12389853E00115277 /* GithubRepoSearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchInteractor.swift; sourceTree = "<group>"; };
 		A51D19E32389853E00115277 /* GithubRepoSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchRouter.swift; sourceTree = "<group>"; };
-		A51D19E62389853E00115277 /* GithubRepoDetailPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresentation.swift; sourceTree = "<group>"; };
 		A51D19E72389853E00115277 /* GithubRepoDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresenter.swift; sourceTree = "<group>"; };
 		A51D19E92389853E00115277 /* GithubRepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailViewController.swift; sourceTree = "<group>"; };
 		A51D19EA2389853E00115277 /* GithubRepoDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GithubRepoDetail.storyboard; sourceTree = "<group>"; };
-		A51D19EC2389853E00115277 /* GithubRepoDetailWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailWireframe.swift; sourceTree = "<group>"; };
 		A51D19ED2389853E00115277 /* GithubRepoDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailRouter.swift; sourceTree = "<group>"; };
 		A51D19FA2389872200115277 /* GithubRepoDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoDetailPresenterTests.swift; sourceTree = "<group>"; };
 		A51D19FB2389872200115277 /* AppTestDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTestDependencies.swift; sourceTree = "<group>"; };
@@ -264,7 +260,7 @@
 		A51D19E02389853E00115277 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				A51D19E12389853E00115277 /* GithubRepoSearchUseCase.swift */,
+				A51D19E12389853E00115277 /* GithubRepoSearchInteractor.swift */,
 				A572062B238A62060055982F /* GithubRepoRecomendInteractor.swift */,
 				A50DFF2323AA20B30039AE0B /* GithubRepoSortInteractor.swift */,
 			);
@@ -292,7 +288,6 @@
 		A51D19E52389853E00115277 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				A51D19E62389853E00115277 /* GithubRepoDetailPresentation.swift */,
 				A51D19E72389853E00115277 /* GithubRepoDetailPresenter.swift */,
 			);
 			path = Presenter;
@@ -310,7 +305,6 @@
 		A51D19EB2389853E00115277 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				A51D19EC2389853E00115277 /* GithubRepoDetailWireframe.swift */,
 				A51D19ED2389853E00115277 /* GithubRepoDetailRouter.swift */,
 			);
 			path = Router;
@@ -492,18 +486,16 @@
 			files = (
 				A50DFF2423AA20B30039AE0B /* GithubRepoSortInteractor.swift in Sources */,
 				A51D19EF2389853E00115277 /* GithubRepoSearchViewController.swift in Sources */,
-				A51D19F32389853E00115277 /* GithubRepoDetailPresentation.swift in Sources */,
 				A51D19D82389853200115277 /* AppDependencies.swift in Sources */,
 				A51D19F42389853E00115277 /* GithubRepoDetailPresenter.swift in Sources */,
 				A572062C238A62060055982F /* GithubRepoRecomendInteractor.swift in Sources */,
 				A51D19F82389853E00115277 /* GithubRepoDetailRouter.swift in Sources */,
 				A51D19F52389853E00115277 /* GithubRepoDetailViewController.swift in Sources */,
 				A5720628238A442E0055982F /* UseCase.swift in Sources */,
-				A51D19F12389853E00115277 /* GithubRepoSearchUseCase.swift in Sources */,
+				A51D19F12389853E00115277 /* GithubRepoSearchInteractor.swift in Sources */,
 				A51D19EE2389853E00115277 /* GithubRepoSearchPresenter.swift in Sources */,
 				A51D19D62389853200115277 /* GithubRepoEntity.swift in Sources */,
 				A51D19D72389853200115277 /* DependencyInjectable.swift in Sources */,
-				A51D19F72389853E00115277 /* GithubRepoDetailWireframe.swift in Sources */,
 				A51D19F22389853E00115277 /* GithubRepoSearchRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
