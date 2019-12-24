@@ -1,5 +1,5 @@
 //
-//  GithubRepoSearchUseCase.swift
+//  GithubRepoSearchInteractor.swift
 //  Sample1A
 //
 //  Created by Yoshinori Imajo on 2019/11/16.
