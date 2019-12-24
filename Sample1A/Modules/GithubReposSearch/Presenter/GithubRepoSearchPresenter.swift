@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - Contract
+
 protocol GithubRepoSearchPresentation: AnyObject {
     func viewDidLoad()
     func search(_ word: String)
@@ -18,6 +20,8 @@ protocol GithubRepoSearchView: AnyObject {
     func recommended(_ data: [GithubRepoEntity])
     func searched(_ data: [GithubRepoEntity])
 }
+
+// MARK: - Presenter
 
 class GithubRepoSearchPresenter {
     struct Dependency {
@@ -83,8 +87,6 @@ extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
             }
         }
     }
-
-    // MARK: - wireframe
 
     func select(_ entity: GithubRepoEntity) {
         dependency.wireframe.presentDetail(entity)
