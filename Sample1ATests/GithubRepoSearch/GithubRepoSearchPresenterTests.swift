@@ -161,9 +161,9 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 extension GithubRepoSearchPresenterTests {
     enum TestDouble {
         class ViewController: UIViewController, GithubRepoSearchView {
-            let displayGithubRepoData = DisplayGithubRepoData()
-            var recomendedHandler: ((DisplayGithubRepoData) -> ())?
-            var searchedHandler: ((DisplayGithubRepoData) -> ())?
+            let displayGithubRepoData = GithubRepoViewData()
+            var recomendedHandler: ((GithubRepoViewData) -> ())?
+            var searchedHandler: ((GithubRepoViewData) -> ())?
 
             func recommended(_ data: [GithubRepoEntity]) {
                 displayGithubRepoData.recommends = data

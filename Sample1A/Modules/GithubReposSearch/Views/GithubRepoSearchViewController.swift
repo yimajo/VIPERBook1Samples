@@ -17,7 +17,7 @@ class GithubRepoSearchViewController: UIViewController {
 
     @IBOutlet private var tableView: UITableView!
 
-    private let displayData = DisplayGithubRepoData()
+    private let displayData = GithubRepoViewData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
