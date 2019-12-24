@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Protocol
+// MARK: - Contract
 
 protocol GithubRepoDetailPresentation {
     func createLoadRequest(with url: URL)

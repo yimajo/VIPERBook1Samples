@@ -8,9 +8,13 @@
 
 import UIKit
 
+// MARK: - Contract
+
 protocol GithubRepoDetailWireframe {
     var detailViewController: UIViewController { get }
 }
+
+// MARK: - Router
 
 struct GithubRepoDetailRouter: GithubRepoDetailWireframe {
     // このRouterがあるときには確実にVCは存在しているのと循環参照したくないのでunowed
