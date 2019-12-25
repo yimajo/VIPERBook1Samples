@@ -203,7 +203,7 @@
 		A51D19D02389853200115277 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A5708DA423B3119C00855DA9 /* Errors */,
+				A5708DA423B3119C00855DA9 /* Error */,
 				A5708DA023B3115300855DA9 /* WebAPI */,
 				A51D19D12389853200115277 /* Entity */,
 				A51D19D32389853200115277 /* Protocol */,
@@ -340,25 +340,25 @@
 		A5708DA023B3115300855DA9 /* WebAPI */ = {
 			isa = PBXGroup;
 			children = (
-				A5708DA123B3116000855DA9 /* Requests */,
+				A5708DA123B3116000855DA9 /* Request */,
 			);
 			path = WebAPI;
 			sourceTree = "<group>";
 		};
-		A5708DA123B3116000855DA9 /* Requests */ = {
+		A5708DA123B3116000855DA9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
 				A5708DA223B3117000855DA9 /* GithubRepoSearchAPIRequest.swift */,
 			);
-			path = Requests;
+			path = Request;
 			sourceTree = "<group>";
 		};
-		A5708DA423B3119C00855DA9 /* Errors */ = {
+		A5708DA423B3119C00855DA9 /* Error */ = {
 			isa = PBXGroup;
 			children = (
 				A5708DA523B311B600855DA9 /* GithubAPIError.swift */,
 			);
-			path = Errors;
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
