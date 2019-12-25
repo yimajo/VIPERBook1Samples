@@ -240,7 +240,7 @@
 		A51D19DA2389853E00115277 /* GithubReposSearch */ = {
 			isa = PBXGroup;
 			children = (
-				A51D19DD2389853E00115277 /* Views */,
+				A51D19DD2389853E00115277 /* View */,
 				A51D19DB2389853E00115277 /* Presenter */,
 				A51D19E22389853E00115277 /* Router */,
 				A51D19E02389853E00115277 /* Interactor */,
@@ -257,13 +257,13 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		A51D19DD2389853E00115277 /* Views */ = {
+		A51D19DD2389853E00115277 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A51D19DE2389853E00115277 /* GithubRepoSearchViewController.swift */,
 				A51D19DF2389853E00115277 /* GithubRepoSearch.storyboard */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A51D19E02389853E00115277 /* Interactor */ = {
@@ -287,7 +287,7 @@
 		A51D19E42389853E00115277 /* GithubReposDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A51D19E82389853E00115277 /* Views */,
+				A51D19E82389853E00115277 /* View */,
 				A51D19E52389853E00115277 /* Presenter */,
 				A51D19EB2389853E00115277 /* Router */,
 			);
@@ -302,13 +302,13 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		A51D19E82389853E00115277 /* Views */ = {
+		A51D19E82389853E00115277 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A51D19E92389853E00115277 /* GithubRepoDetailViewController.swift */,
 				A51D19EA2389853E00115277 /* GithubRepoDetail.storyboard */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A51D19EB2389853E00115277 /* Router */ = {
