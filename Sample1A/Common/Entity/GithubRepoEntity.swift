@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct GithubRepoEntity: Decodable, Equatable {
+struct GithubRepoEntity: Decodable, Identifiable, Equatable {
+    let id: Int
     let name: String
     let htmlURL: URL
     let description: String?
     let stargazersCount: Int?
 
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case htmlURL = "html_url"
         case description
@@ -24,6 +26,6 @@ struct GithubRepoEntity: Decodable, Equatable {
     // 同じものかどうかを比較できるようにしておきます。
     // 主にテストコードで利用します。
     static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.htmlURL == rhs.htmlURL
+        return lhs.id == rhs.id
     }
 }
