@@ -16,18 +16,21 @@ class GithubRepoSortInteractorTests: XCTestCase {
 
         let stubData: [GithubRepoEntity] = [
             .init(
+                id: 1,
                 name: "name0",
                 htmlURL: URL(string: "http://example.com/0")!,
                 description: "",
                 stargazersCount: 0
             ),
             .init(
+                id: 2,
                 name: "name1",
                 htmlURL: URL(string: "http://example.com/1")!,
                 description: "",
                 stargazersCount: 1
             ),
             .init(
+                id: 3,
                 name: "name2",
                 htmlURL: URL(string: "http://example.com/2")!,
                 description: "",
@@ -63,18 +66,21 @@ class GithubRepoSortInteractorTests: XCTestCase {
 
         let stubData: [GithubRepoEntity] = [
             .init(
+                id: 1,
                 name: "name0",
                 htmlURL: URL(string: "http://example.com/0")!,
                 description: "",
                 stargazersCount: 0
             ),
             .init(
+                id: 2,
                 name: "name1",
                 htmlURL: URL(string: "http://example.com/1")!,
                 description: "",
                 stargazersCount: 1
             ),
             .init(
+                id: 3,
                 name: "name2",
                 htmlURL: URL(string: "http://example.com/2")!,
                 description: "",

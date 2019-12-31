@@ -28,6 +28,7 @@ class GithubRepoSearchRouterTests: XCTestCase {
     func testDetailViewControllerIsPushed() {
         setUp()
         let entity = GithubRepoEntity(
+            id: 1,
             name: "name0",
             htmlURL: URL(string: "html://example.com")!,
             description: "",

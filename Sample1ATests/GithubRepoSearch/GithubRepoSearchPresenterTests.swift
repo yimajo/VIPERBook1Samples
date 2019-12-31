@@ -111,12 +111,14 @@ class GithubRepoSearchPresenterTests: XCTestCase {
         XCTContext.runActivity(named: "searchを呼び出した後") { _ in
             searchInteractor.stubData = [
                 .init(
+                    id: 1,
                     name: "name0",
                     htmlURL: URL(string: "http://example.com/0")!,
                     description: "",
                     stargazersCount: 0
                 ),
                 .init(
+                    id: 2,
                     name: "name1",
                     htmlURL: URL(string: "http://example.com/1")!,
                     description: "",
