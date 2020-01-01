@@ -9,26 +9,29 @@
 import Foundation
 
 struct GithubRepoRecommendInteractor: UseCase {
-    func execute(_ parameters: Void = (), completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+    func execute(
+        _ parameters: Void = (),
+        completion: ((Result<[GithubRepoEntity], Error>) -> ())?)
+    {
         let entities = [
             GithubRepoEntity(
                 id: 20638417,
                 name: "objcio/issue-13-viper",
                 htmlURL: URL(string: "https://github.com/objcio/issue-13-viper")!,
-                description: "Mutualmobile社の人がobjc.ioに寄稿したオリジナルなVIPERサンプル",
+                description: "Mutualmobile社のオリジナルなVIPERサンプル",
                 stargazersCount: nil
             ),
             GithubRepoEntity(
                 id: 20638435,
                 name: "objcio/issue-13-viper-swift",
-                htmlURL:  URL(string: "https://github.com/objcio/issue-13-viper-swift")!,
+                htmlURL: URL(string: "https://github.com/objcio/issue-13-viper-swift")!,
                 description: "オリジナルなVIPERサンプルをSwiftで書き換えたもの",
                 stargazersCount: nil
             ),
             GithubRepoEntity(
                 id: 54735381,
                 name: "pedrohperalta/Articles-iOS-VIPER",
-                htmlURL:  URL(string: "https://github.com/pedrohperalta/Articles-iOS-VIPER")!,
+                htmlURL: URL(string: "https://git.io/JeApc")!,
                 description: "PedroさんのVIPER実装",
                 stargazersCount: nil
             )
