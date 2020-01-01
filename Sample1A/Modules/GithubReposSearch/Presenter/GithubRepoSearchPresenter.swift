@@ -32,7 +32,7 @@ class GithubRepoSearchPresenter {
     }
 
     private let dependency: Dependency
-    weak var view: GithubRepoSearchView?
+    private weak var view: GithubRepoSearchView?
 
     private var recommends: [GithubRepoEntity] {
         didSet {
