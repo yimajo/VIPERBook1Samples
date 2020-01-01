@@ -10,8 +10,13 @@ import Foundation
 
 struct GithubRepoSortInteractor: UseCase {
 
-    func execute(_ parameters: [GithubRepoEntity], completion: ((Result<[GithubRepoEntity], Never>) -> ())?) {
-        let sorted = parameters.sorted { $0.stargazersCount ?? 0 > $1.stargazersCount ?? 0 }
+    func execute(
+        _ parameters: [GithubRepoEntity],
+        completion: ((Result<[GithubRepoEntity], Never>) -> ())?)
+    {
+        let sorted = parameters.sorted {
+            $0.stargazersCount ?? 0 > $1.stargazersCount ?? 0
+        }
         completion?(.success(sorted))
     }
 
