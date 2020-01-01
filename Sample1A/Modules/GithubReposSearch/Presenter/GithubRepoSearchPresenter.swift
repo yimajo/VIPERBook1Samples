@@ -26,9 +26,9 @@ protocol GithubRepoSearchView: AnyObject {
 class GithubRepoSearchPresenter {
     struct Dependency {
         let wireframe: GithubReposSearchWireframe
-        let githubRepoRecommend: AnyUseCase<Void, [GithubRepoEntity]>
-        let githubRepoSearch: AnyUseCase<String, [GithubRepoEntity]>
-        let githubRepoSort: AnyUseCase<[GithubRepoEntity], [GithubRepoEntity]>
+        let githubRepoRecommend: AnyUseCase<Void, [GithubRepoEntity], Never>
+        let githubRepoSearch: AnyUseCase<String, [GithubRepoEntity], Error>
+        let githubRepoSort: AnyUseCase<[GithubRepoEntity], [GithubRepoEntity], Never>
     }
 
     private let dependency: Dependency
@@ -45,12 +45,11 @@ class GithubRepoSearchPresenter {
     private var searchResultEntities: [GithubRepoEntity] = [] {
         didSet {
             dependency.githubRepoSort.execute(searchResultEntities) { [weak self] result in
-                guard let entities = try? result.get() else {
-                    return
-                }
-
-                DispatchQueue.main.async {
-                    self?.view?.searched(entities)
+                switch result {
+                case .success(let entities):
+                    DispatchQueue.main.async {
+                        self?.view?.searched(entities)
+                    }
                 }
             }
         }
@@ -66,7 +65,10 @@ class GithubRepoSearchPresenter {
 extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
     func viewDidLoad() {
         dependency.githubRepoRecommend.execute(()) { [weak self] result in
-            self?.recommends = try! result.get()
+            switch result {
+            case .success(let entities):
+                self?.recommends = entities
+            }
         }
     }
 
