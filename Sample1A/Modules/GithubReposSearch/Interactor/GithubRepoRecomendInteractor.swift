@@ -31,7 +31,7 @@ struct GithubRepoRecommendInteractor: UseCase {
             GithubRepoEntity(
                 id: 54735381,
                 name: "pedrohperalta/Articles-iOS-VIPER",
-                htmlURL:  URL(string: "https://github.com/pedrohperalta/Articles-iOS-VIPER")!,
+                htmlURL: URL(string: "https://git.io/JeApc")!,
                 description: "PedroさんのVIPER実装",
                 stargazersCount: nil
             )
