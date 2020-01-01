@@ -18,7 +18,7 @@ struct GithubRepoRecommendInteractor: UseCase {
                 id: 20638417,
                 name: "objcio/issue-13-viper",
                 htmlURL: URL(string: "https://github.com/objcio/issue-13-viper")!,
-                description: "Mutualmobile社の人がobjc.ioに寄稿したオリジナルなVIPERサンプル",
+                description: "Mutualmobile社のオリジナルなVIPERサンプル",
                 stargazersCount: nil
             ),
             GithubRepoEntity(
