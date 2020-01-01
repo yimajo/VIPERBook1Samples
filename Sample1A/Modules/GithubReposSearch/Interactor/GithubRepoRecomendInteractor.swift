@@ -9,7 +9,10 @@
 import Foundation
 
 struct GithubRepoRecommendInteractor: UseCase {
-    func execute(_ parameters: Void = (), completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+    func execute(
+        _ parameters: Void = (),
+        completion: ((Result<[GithubRepoEntity], Error>) -> ())?)
+    {
         let entities = [
             GithubRepoEntity(
                 id: 20638417,
@@ -21,7 +24,7 @@ struct GithubRepoRecommendInteractor: UseCase {
             GithubRepoEntity(
                 id: 20638435,
                 name: "objcio/issue-13-viper-swift",
-                htmlURL:  URL(string: "https://github.com/objcio/issue-13-viper-swift")!,
+                htmlURL: URL(string: "https://github.com/objcio/issue-13-viper-swift")!,
                 description: "オリジナルなVIPERサンプルをSwiftで書き換えたもの",
                 stargazersCount: nil
             ),
