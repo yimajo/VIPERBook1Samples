@@ -11,7 +11,7 @@ import Foundation
 struct GithubRepoRecommendInteractor: UseCase {
     func execute(
         _ parameters: Void = (),
-        completion: ((Result<[GithubRepoEntity], Error>) -> ())?)
+        completion: ((Result<[GithubRepoEntity], Never>) -> ())?)
     {
         let entities = [
             GithubRepoEntity(
