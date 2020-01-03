@@ -22,10 +22,9 @@ protocol GithubReposSearchWireframe {
 struct GithubRepoSearchRouter: GithubReposSearchWireframe {
 
     let appDependencies: AppDependencies
-    // presentやらしたいときに使う
+    // presentしたい際に使う
     var searchViewController: UIViewController
 
-    // テストするにはsearchViewControllerのrootをみる
     func presentDetail(_ githubRepoEntity: GithubRepoEntity) {
         let viewController = appDependencies.assembleGithubRepoDetailModule(
             githubRepoEntity: githubRepoEntity
