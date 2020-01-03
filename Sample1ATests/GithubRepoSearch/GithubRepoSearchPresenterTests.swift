@@ -14,14 +14,11 @@ class GithubRepoSearchPresenterTests: XCTestCase {
     private var presenter: GithubRepoSearchPresenter!
     // viewは何もしない
     private let view = TestDouble.ViewController()
-    // Routerの特定のメソッドが実行されることを確認することでPresenterの入力を検証する
-    private var router: TestDouble.Router!
-    // Interactorは通信せずダミーを返す
-    private var searchInteractor: TestDouble.SearchInteractor!
 
-    override func setUp() {
-        router = TestDouble.Router(searchViewController: view)
-        searchInteractor = TestDouble.SearchInteractor()
+    func testPresenterInput() {
+        // Interactorは通信せずダミーを返す
+        var searchInteractor = TestDouble.SearchInteractor()
+        let router = TestDouble.Router(searchViewController: view)
 
         presenter = GithubRepoSearchPresenter(
             view: view,
@@ -32,10 +29,9 @@ class GithubRepoSearchPresenterTests: XCTestCase {
                 githubRepoSort: AnyUseCase(GithubRepoSortInteractor())
             )
         )
-        presenter.viewDidLoad()
-    }
 
-    func testPresenterInput() {
+        presenter.viewDidLoad()
+
         // searchを呼び出す前
         XCTContext.runActivity(named: "searchを一度も呼び出していない場合") { _ in
             XCTContext.runActivity(named: "Sectionは固定値を返す") { _ in
@@ -165,9 +161,81 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
                         let entity = self.view.displayGithubRepoData.item(with: indexPath)
                         self.presenter.select(entity!)
-                        XCTAssertEqual(self.router.githubRepoEntity?.name, "name1")
+                        XCTAssertEqual(router.githubRepoEntity?.name, "name1")
                     }
                 }
+
+                wait(for: [exp], timeout: 5)
+            }
+        }
+    }
+
+    func testPresenterError() {
+        XCTContext.runActivity(named: "エラーが発生してRouterが検知できる") { _ in
+            let router = TestDouble.Router(searchViewController: view)
+
+            let searchInteractor = TestDouble.SearchErrorInteractor()
+            searchInteractor.error = NSError(
+                domain: NSURLErrorDomain,
+                code: NSURLErrorUnknown,
+                userInfo: nil
+            )
+            router.error = nil
+
+            let presenter = GithubRepoSearchPresenter(
+                view: view,
+                dependency: .init(
+                    wireframe: router,
+                    githubRepoRecommend: AnyUseCase(GithubRepoRecommendInteractor()),
+                    githubRepoSearch: AnyUseCase(searchInteractor),
+                    githubRepoSort: AnyUseCase(GithubRepoSortInteractor())
+                )
+            )
+
+            XCTContext.runActivity(named: "Routerで取得したErrorが用意したものか") { _ in
+                let exp = XCTestExpectation()
+                searchInteractor.errorHandler = {
+                    exp.fulfill()
+                    let error = router.error! as NSError
+                    XCTAssert(error.domain == NSURLErrorDomain)
+                    XCTAssert(error.code == NSURLErrorUnknown)
+                }
+
+                presenter.search("")
+
+                wait(for: [exp], timeout: 5)
+            }
+        }
+
+        XCTContext.runActivity(named: "キャンセルエラーはRouterが検知しない") { _ in
+            let router = TestDouble.Router(searchViewController: view)
+
+            let searchInteractor = TestDouble.SearchErrorInteractor()
+            searchInteractor.error = NSError(
+                domain: NSURLErrorDomain,
+                code: NSURLErrorCancelled,
+                userInfo: nil
+            )
+            router.error = nil
+
+            let presenter = GithubRepoSearchPresenter(
+                view: view,
+                dependency: .init(
+                    wireframe: router,
+                    githubRepoRecommend: AnyUseCase(GithubRepoRecommendInteractor()),
+                    githubRepoSearch: AnyUseCase(searchInteractor),
+                    githubRepoSort: AnyUseCase(GithubRepoSortInteractor())
+                )
+            )
+
+            XCTContext.runActivity(named: "Routerで取得したErrorが用意したものか") { _ in
+                let exp = XCTestExpectation()
+                searchInteractor.errorHandler = {
+                    exp.fulfill()
+                    XCTAssertNil(router.error)
+                }
+
+                presenter.search("")
 
                 wait(for: [exp], timeout: 5)
             }
@@ -208,7 +276,8 @@ extension GithubRepoSearchPresenterTests {
             }
 
             func presentAlert(_ error: Error) {
-                // ここでErrorのテストやるべきか考え中...
+                // メソッドが呼び出されたことを検証するため取得したErrorをセット
+                self.error = error
             }
         }
 
@@ -221,6 +290,24 @@ extension GithubRepoSearchPresenterTests {
                 completion: ((Result<[GithubRepoEntity], Error>) -> ())?)
             {
                 completion?(.success(self.stubData!))
+            }
+
+            func cancel() {}
+        }
+
+        class SearchErrorInteractor: UseCase {
+            // テスト用入力としてErrorをセットし必ずErrorを出力する
+            var error: Swift.Error!
+            var errorHandler: (() -> ())?
+
+            func execute(
+                _ parameters: String,
+                completion: ((Result<[GithubRepoEntity], Error>) -> ())?)
+            {
+                completion?(.failure(error))
+                DispatchQueue.main.async {
+                    self.errorHandler?()
+                }
             }
 
             func cancel() {}
