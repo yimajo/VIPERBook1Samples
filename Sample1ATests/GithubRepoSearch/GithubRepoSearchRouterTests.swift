@@ -11,13 +11,16 @@ import XCTest
 
 class GithubRepoSearchRouterTests: XCTestCase {
     private var router: GithubRepoSearchRouter!
-    // テストの範囲内で本物と同じように動作するTest DoubleはFake Object。
-    // 実際のGithubRepoSearchViewControllerを使うとライフサイクルが動作してしまうので同じ動作をすればいいのでFake。
-    private let searchViewController = AppTestDependencies.TestDouble.SearchViewController()
+    private let searchViewController =
+        AppTestDependencies.TestDouble.SearchViewController()
 
     override func setUp() {
-        let navigationController = UINavigationController(rootViewController: searchViewController)
-        UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController = navigationController
+        let navigationController = UINavigationController(
+            rootViewController: searchViewController
+        )
+
+        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+        window?.rootViewController = navigationController
 
         router = GithubRepoSearchRouter(
             appDependencies: AppTestDependencies(),
@@ -43,8 +46,12 @@ class GithubRepoSearchRouterTests: XCTestCase {
                 exp.fulfill()
             }
 
-            let pushedViewController = self.searchViewController.navigationController?.visibleViewController
-            XCTAssertTrue(pushedViewController is AppTestDependencies.TestDouble.DetailViewController)
+            let navigation = self.searchViewController.navigationController
+            let pushedViewController = navigation?.visibleViewController
+            XCTAssertTrue(
+                pushedViewController
+                    is AppTestDependencies.TestDouble.DetailViewController
+            )
         }
 
         wait(for: [exp], timeout: 5)
@@ -60,10 +67,11 @@ class GithubRepoSearchRouterTests: XCTestCase {
                 exp.fulfill()
             }
 
-            let presentedViewController = UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.presentedViewController as? UIAlertController
+            let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+            let viewController = window?.rootViewController?.presentedViewController
+            let presentedViewController = viewController as? UIAlertController
 
-            XCTAssertNotNil(presentedViewController)
-            XCTAssertEqual(presentedViewController?.message, "それっぽいエラー文言")
+            XCTAssertEqual(presentedViewController?.message, "エラー文言")
         }
 
         wait(for: [exp], timeout: 5)
@@ -73,7 +81,7 @@ class GithubRepoSearchRouterTests: XCTestCase {
 extension GithubRepoSearchRouterTests {
     enum TestDouble {
         struct Error: Swift.Error, LocalizedError {
-            var errorDescription: String? { "それっぽいエラー文言" }
+            var errorDescription: String? { "エラー文言" }
         }
     }
 }
