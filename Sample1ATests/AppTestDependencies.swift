@@ -12,15 +12,13 @@ import UIKit
 struct AppTestDependencies: AppDependencies {
 
     func assembleGithubRepoSearchModule() -> UIViewController {
-        // 今のところ使ってないDummyObject
         let viewController = TestDouble.SearchViewController()
         return viewController
     }
 
     func assembleGithubRepoDetailModule(
         githubRepoEntity: GithubRepoEntity
-    ) -> UIViewController { // UIViewControllerでないとRouterが具体的なViewControllerを知ってしまう
-        // SearchModuleのrouterがこれを呼び出してしまうのでTestDoubleに置き換える
+    ) -> UIViewController {
         let viewController = TestDouble.DetailViewController()
         return viewController
     }

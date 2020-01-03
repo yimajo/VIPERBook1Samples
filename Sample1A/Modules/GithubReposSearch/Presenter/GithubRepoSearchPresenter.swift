@@ -32,7 +32,7 @@ class GithubRepoSearchPresenter {
     }
 
     private let dependency: Dependency
-    weak var view: GithubRepoSearchView?
+    private weak var view: GithubRepoSearchView?
 
     private var recommends: [GithubRepoEntity] {
         didSet {
@@ -44,8 +44,8 @@ class GithubRepoSearchPresenter {
 
     private var searchResultEntities: [GithubRepoEntity] = [] {
         didSet {
-            dependency.githubRepoSort.execute(searchResultEntities) { [weak self] result in
-                switch result {
+            dependency.githubRepoSort.execute(searchResultEntities) { [weak self] in
+                switch $0 {
                 case .success(let entities):
                     DispatchQueue.main.async {
                         self?.view?.searched(entities)

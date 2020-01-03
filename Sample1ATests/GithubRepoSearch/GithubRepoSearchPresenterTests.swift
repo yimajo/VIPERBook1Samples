@@ -14,7 +14,7 @@ class GithubRepoSearchPresenterTests: XCTestCase {
     private var presenter: GithubRepoSearchPresenter!
     // viewは何もしない
     private let view = TestDouble.ViewController()
-    // Presenterの特定の入力によりrouterは特定のメソッドが実行されることを確認することでPresenterの入力を検証する
+    // Routerの特定のメソッドが実行されることを確認することでPresenterの入力を検証する
     private var router: TestDouble.Router!
     // Interactorは通信せずダミーを返す
     private var searchInteractor: TestDouble.SearchInteractor!
@@ -81,7 +81,10 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
                         let entity = view.displayGithubRepoData.item(with: indexPath)!
                         presenter.select(entity)
-                        XCTAssertEqual(router.githubRepoEntity?.name, "objcio/issue-13-viper")
+                        XCTAssertEqual(
+                            router.githubRepoEntity?.name,
+                            "objcio/issue-13-viper"
+                        )
                     }
 
                     XCTContext.runActivity(named: "row: 1をタップ") { _ in
@@ -89,7 +92,10 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
                         let entity = view.displayGithubRepoData.item(with: indexPath)!
                         presenter.select(entity)
-                        XCTAssertEqual(router.githubRepoEntity?.name, "objcio/issue-13-viper-swift")
+                        XCTAssertEqual(
+                            router.githubRepoEntity?.name,
+                            "objcio/issue-13-viper-swift"
+                        )
                     }
 
                     XCTContext.runActivity(named: "row: 2をタップ") { _ in
@@ -97,7 +103,10 @@ class GithubRepoSearchPresenterTests: XCTestCase {
 
                         let entity = view.displayGithubRepoData.item(with: indexPath)!
                         presenter.select(entity)
-                        XCTAssertEqual(router.githubRepoEntity?.name, "pedrohperalta/Articles-iOS-VIPER")
+                        XCTAssertEqual(
+                            router.githubRepoEntity?.name,
+                            "pedrohperalta/Articles-iOS-VIPER"
+                        )
                     }
                 }
             }
@@ -141,15 +150,21 @@ class GithubRepoSearchPresenterTests: XCTestCase {
                         XCTAssertEqual(data.numberOfSections, 2)
                         XCTAssertEqual(data.numberOfItems(in: section), 2)
 
-                        XCTAssertEqual(data.item(with: IndexPath(item: 0, section: section))?.name, "name1")
-                        XCTAssertEqual(data.item(with: IndexPath(item: 1, section: section))?.name, "name0")
+                        XCTAssertEqual(
+                            data.item(with: IndexPath(item: 0, section: section))?.name,
+                            "name1"
+                        )
+                        XCTAssertEqual(
+                            data.item(with: IndexPath(item: 1, section: section))?.name,
+                            "name0"
+                        )
                     }
 
                     XCTContext.runActivity(named: "タップ") { _ in
                         let indexPath = IndexPath(row: 0, section: section)
 
-                        let entity = self.view.displayGithubRepoData.item(with: indexPath)!
-                        self.presenter.select(entity)
+                        let entity = self.view.displayGithubRepoData.item(with: indexPath)
+                        self.presenter.select(entity!)
                         XCTAssertEqual(self.router.githubRepoEntity?.name, "name1")
                     }
                 }
@@ -201,7 +216,10 @@ extension GithubRepoSearchPresenterTests {
             // テスト用入力としてセットし出力するスタブ
             var stubData: [GithubRepoEntity]?
 
-            func execute(_ parameters: String, completion: ((Result<[GithubRepoEntity], Error>) -> ())?) {
+            func execute(
+                _ parameters: String,
+                completion: ((Result<[GithubRepoEntity], Error>) -> ())?)
+            {
                 completion?(.success(self.stubData!))
             }
 
