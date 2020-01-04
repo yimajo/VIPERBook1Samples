@@ -30,51 +30,55 @@ class GithubRepoSearchRouterTests: XCTestCase {
 
     func testDetailViewControllerIsPushed() {
         setUp()
-        let entity = GithubRepoEntity(
-            id: 1,
-            name: "name0",
-            htmlURL: URL(string: "html://example.com")!,
-            description: "",
-            stargazersCount: nil
-        )
+        XCTContext.runActivity(named: "Entityを渡されて表示する場合") { _ in
+            let entity = GithubRepoEntity(
+                id: 1,
+                name: "name0",
+                htmlURL: URL(string: "html://example.com")!,
+                description: "",
+                stargazersCount: nil
+            )
 
-        router.presentDetail(entity)
+            router.presentDetail(entity)
 
-        let exp = XCTestExpectation()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            defer {
-                exp.fulfill()
+            let exp = XCTestExpectation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                defer {
+                    exp.fulfill()
+                }
+
+                let navigation = self.searchViewController.navigationController
+                let pushedViewController = navigation?.visibleViewController
+                XCTAssertTrue(
+                    pushedViewController
+                        is AppTestDependencies.TestDouble.DetailViewController
+                )
             }
 
-            let navigation = self.searchViewController.navigationController
-            let pushedViewController = navigation?.visibleViewController
-            XCTAssertTrue(
-                pushedViewController
-                    is AppTestDependencies.TestDouble.DetailViewController
-            )
+            wait(for: [exp], timeout: 5)
         }
-
-        wait(for: [exp], timeout: 5)
     }
 
     func testPresentErrorAlert() {
         setUp()
-        router.presentAlert(TestDouble.Error())
+        XCTContext.runActivity(named: "Errorを渡されて表示する場合") { _ in
+            router.presentAlert(TestDouble.Error())
 
-        let exp = XCTestExpectation()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            defer {
-                exp.fulfill()
+            let exp = XCTestExpectation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                defer {
+                    exp.fulfill()
+                }
+
+                let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+                let viewController = window?.rootViewController?.presentedViewController
+                let presentedViewController = viewController as? UIAlertController
+
+                XCTAssertEqual(presentedViewController?.message, "エラー文言")
             }
 
-            let window = UIApplication.shared.windows.first { $0.isKeyWindow }
-            let viewController = window?.rootViewController?.presentedViewController
-            let presentedViewController = viewController as? UIAlertController
-
-            XCTAssertEqual(presentedViewController?.message, "エラー文言")
+            wait(for: [exp], timeout: 5)
         }
-
-        wait(for: [exp], timeout: 5)
     }
 }
 
