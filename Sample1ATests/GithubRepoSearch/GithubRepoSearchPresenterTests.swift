@@ -170,7 +170,7 @@ class GithubRepoSearchPresenterTests: XCTestCase {
         }
     }
 
-    func testPresenterError() {
+    func testPresenterErrorHandling() {
         XCTContext.runActivity(named: "エラーが発生してRouterが検知できる") { _ in
             let router = TestDouble.Router(searchViewController: view)
 
