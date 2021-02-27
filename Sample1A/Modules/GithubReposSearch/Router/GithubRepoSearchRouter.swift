@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Contract
 
 protocol GithubReposSearchWireframe {
-    var searchViewController: UIViewController { get set }
+    var searchViewController: UIViewController { get }
 
     func presentDetail(_ githubRepoEntity: GithubRepoEntity)
     func presentAlert(_ error: Error)
