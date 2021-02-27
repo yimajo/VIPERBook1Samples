@@ -23,7 +23,7 @@ struct GithubRepoSearchRouter: GithubReposSearchWireframe {
 
     let appDependencies: AppDependencies
     // presentしたい際に使う
-    var searchViewController: UIViewController
+    unowned var searchViewController: UIViewController
 
     func presentDetail(_ githubRepoEntity: GithubRepoEntity) {
         let viewController = appDependencies.assembleGithubRepoDetailModule(
