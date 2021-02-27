@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Contract
 
 protocol GithubReposSearchWireframe {
-    var searchViewController: UIViewController { get set }
+    var searchViewController: UIViewController { get }
 
     func presentDetail(_ githubRepoEntity: GithubRepoEntity)
     func presentAlert(_ error: Error)
@@ -23,7 +23,7 @@ struct GithubRepoSearchRouter: GithubReposSearchWireframe {
 
     let appDependencies: AppDependencies
     // presentしたい際に使う
-    var searchViewController: UIViewController
+    unowned var searchViewController: UIViewController
 
     func presentDetail(_ githubRepoEntity: GithubRepoEntity) {
         let viewController = appDependencies.assembleGithubRepoDetailModule(
